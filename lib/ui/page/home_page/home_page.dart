@@ -1,3 +1,4 @@
+import 'package:blog/res/shadow_style.dart';
 import 'package:blog/ui/page/complex_page/complex_page.dart';
 import 'package:blog/ui/page/my_page/my_page.dart';
 import 'package:blog/ui/page/project_page/project_page.dart';
@@ -46,8 +47,8 @@ class HomeTabOptionsState extends State<HomePage>
           MyPage()
         ],
       ),
-      bottomNavigationBar: Material(
-        color: Colors.white,
+      bottomNavigationBar: Container(
+        decoration: ShadowStyle.white12TopSpread4Blur10(radius :0 ),
         child: TabBar(
           indicator: const BoxDecoration(),
           labelColor: ColorStyle.color_24CF5F,

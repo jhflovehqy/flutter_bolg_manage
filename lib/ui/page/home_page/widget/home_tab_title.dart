@@ -1,22 +1,24 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class TabTitleIcon extends StatelessWidget{
-
+/// @class : TabTitleIcon
+/// @date : 2021/08/19
+/// @name : jhf
+///
+/// @description :文字加图标的Tab
+class TabTitleIcon extends StatelessWidget {
   String title = "";
   IconData? icon;
 
   TabTitleIcon({
-    Key? key ,
-    required this.title ,
+    Key? key,
+    required this.title,
     this.icon,
   }) : super(key: key);
 
-
   @override
   Widget build(BuildContext context) {
-    return  Tab(
+    return Tab(
       text: title,
       iconMargin: const EdgeInsets.all(5),
       icon: Icon(
@@ -24,5 +26,4 @@ class TabTitleIcon extends StatelessWidget{
       ),
     );
   }
-
 }

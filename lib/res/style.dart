@@ -62,6 +62,12 @@ class Styles {
 
   static const TextStyle style_FE8C28_24_bold =
   TextStyle(color: ColorStyle.color_FE8C28, fontSize: 24, fontWeight: FontWeight.w700);
+
+  static const TextStyle style_FFAE2E_16=
+  TextStyle(color: ColorStyle.color_FFAE2E, fontSize: 16);
+
+
+
 }
 
 /// 间隔

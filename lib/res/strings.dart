@@ -97,6 +97,10 @@ class StringStyles{
   static const String shareSaveLocal= "shareSaveLocal";
   static const String shareBrowser = "shareBrowser";
   static const String saveSuccess = "saveSuccess";
+
+  static const String tabHome= "tabHome";
+  static const String tabHottest = "tabHottest";
+  static const String tabAsk = "tabAsk";
 }
 
 ///使用Get配置语言环境
@@ -183,6 +187,9 @@ class Messages extends Translations{
       StringStyles.shareSaveLocal : "保存到本地",
       StringStyles.shareBrowser : "浏览器打开",
       StringStyles.saveSuccess :  "保存成功",
+      StringStyles.tabHome :  "首页",
+      StringStyles.tabHottest :  "热门",
+      StringStyles.tabAsk :  "问答",
     },
     'zh_HK' :{
       StringStyles.appName : '博時',

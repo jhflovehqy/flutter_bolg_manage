@@ -13,18 +13,21 @@ class ProjectPage extends GetSaveView<ProjectController> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      top: true,
-      child: RefreshWidget<ProjectController>(
-        child: ListView.builder(
-          padding: EdgeInsets.zero,
-          shrinkWrap: true,
-          itemCount: controller.projectData.length,
-          itemBuilder: (BuildContext context, int index) {
-            return ProjectListItem(
-                controller.projectData[index]
-            );
-          },
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: SafeArea(
+        top: true,
+        child: RefreshWidget<ProjectController>(
+          child: ListView.builder(
+            padding: EdgeInsets.zero,
+            shrinkWrap: true,
+            itemCount: controller.projectData.length,
+            itemBuilder: (BuildContext context, int index) {
+              return ProjectListItem(
+                  controller.projectData[index]
+              );
+            },
+          ),
         ),
       ),
     );

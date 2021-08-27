@@ -16,6 +16,8 @@ import 'dialog_base.dart';
 /// @name : jhf
 /// @description : 分享弹窗
 class ShareDialog extends StatelessWidget {
+
+
   String url = 'https://www.baidu.com';
 
   ShareDialog({Key? key, this.url = 'https://www.baidu.com'}) : super(key: key);

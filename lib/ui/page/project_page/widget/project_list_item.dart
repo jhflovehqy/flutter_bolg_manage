@@ -24,6 +24,7 @@ class ProjectListItem extends StatelessWidget {
         width: double.infinity,
         margin: const EdgeInsets.symmetric(horizontal: 10),
         decoration: const BoxDecoration(
+            color: Colors.white,
             border: Border(
                 bottom: BorderSide(width: 0.5, color: ColorStyle.color_EFF1F8))),
         padding: const EdgeInsets.all(8.0),

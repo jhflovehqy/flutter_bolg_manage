@@ -16,8 +16,8 @@ class ShadowStyle{
     return BoxDecoration(
         color: Colors.transparent,
         borderRadius: BorderRadius.circular(40),
-        boxShadow: [
-          const BoxShadow(
+        boxShadow: const[
+           BoxShadow(
               offset: Offset(2, 1),
               color: Colors.black12,
               blurRadius: 12
@@ -44,4 +44,27 @@ class ShadowStyle{
     );
   }
 
+
+
+  ///背景:白色
+  ///阴影:顶部阴影
+  ///圆角:[radius] default 10
+  static white12TopSpread4Blur10 ({double radius = 10}){
+    return BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(radius),
+        boxShadow: const[
+          BoxShadow(
+              ///阴影x轴偏移量
+              offset: Offset(-3.0, 3.0),
+              ///阴影模糊程度
+              blurRadius: 10,
+              ///阴影颜色
+              color: ColorStyle.colorShadow,
+              ///阴影扩散程度
+              spreadRadius: 4
+          )
+        ]
+    );
+  }
 }
