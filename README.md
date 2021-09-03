@@ -1,6 +1,6 @@
 # blog
 
-A new Flutter project.
+Flutter实战项目，采用Getx框架管理，遵循Material design设计风格，适合您实战参考或练手
 
 ## Getting Started
 
