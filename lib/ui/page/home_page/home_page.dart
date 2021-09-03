@@ -1,5 +1,6 @@
 import 'package:blog/res/shadow_style.dart';
-import 'package:blog/ui/page/complex_page/complex_page.dart';
+import 'package:blog/ui/page/complex_module/complex_page/complex_page.dart';
+import 'package:blog/ui/page/my_page/my_controller.dart';
 import 'package:blog/ui/page/my_page/my_page.dart';
 import 'package:blog/ui/page/project_page/project_page.dart';
 import 'package:flutter/material.dart';
@@ -27,6 +28,16 @@ class HomeTabOptionsState extends State<HomePage>
   @override
   void initState() {
     tabController = TabController(length: 3, vsync: this);
+    ///监听TabBar切换事件
+    tabController?.addListener(() {
+      var index = tabController?.index;
+      ///修复执行2次的BUG,增加条件
+      if (tabController?.index == tabController?.animation?.value) {
+        if (index == tabController!.length - 1) {
+          Get.find<MyController>().notifyUserInfo();
+        }
+      }
+    });
   }
 
   @override

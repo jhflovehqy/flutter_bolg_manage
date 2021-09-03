@@ -12,6 +12,8 @@ class RequestApi{
   static const String apiLogin = 'user/login';
   ///注册接口
   static const String apiRegister= 'user/register';
+  ///用户信息接口
+  static const String apiUserInfo = 'user/lg/userinfo/json';
   ///首页Tab栏接口
   static const String apiTab = 'project/tree/json';
   ///项目接口
@@ -28,6 +30,10 @@ class RequestApi{
   static const String apiLogout = 'user/logout/json';
   ///我的收藏
   static const String apiCollectDetail = 'lg/collect/list/page/json';
+  ///问答列表
+  static const String apiAsk = 'wenda/list/page/json';
+  ///首页banner轮播图
+  static const String apiBanner = 'banner/json';
 
 }
 

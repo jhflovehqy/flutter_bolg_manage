@@ -2,6 +2,10 @@ import 'package:blog/res/colors.dart';
 import 'package:blog/res/r.dart';
 import 'package:blog/res/strings.dart';
 import 'package:blog/res/style.dart';
+import 'package:blog/routes/routes.dart';
+import 'package:blog/ui/page/complex_module/ask_page/ask_page.dart';
+import 'package:blog/ui/page/complex_module/main_page/main_page.dart';
+import 'package:blog/widget/ripple_widget.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_utils/src/extensions/internacionalization.dart';
@@ -45,6 +49,7 @@ class _ComplexPageState extends State<ComplexPage>
                 children: [
                   Container(
                     alignment: Alignment.topLeft,
+
                     ///导航栏
                     child: TabBar(
                       isScrollable: true,
@@ -53,7 +58,7 @@ class _ComplexPageState extends State<ComplexPage>
                       controller: tabController,
                       labelStyle: Styles.style_FE8C28_24_bold,
                       unselectedLabelStyle: Styles.style_FFAE2E_16,
-                      tabs:  [
+                      tabs: [
                         Tab(
                           text: StringStyles.tabHome.tr,
                         ),
@@ -71,11 +76,14 @@ class _ComplexPageState extends State<ComplexPage>
                   const Expanded(child: SizedBox()),
 
                   ///搜索框
-                  SvgPicture.asset(
-                    R.assetsImagesSearch,
-                    color: Colors.black87,
-                    width: 30,
-                  ),
+                  Ripple(
+                      circular: 20,
+                      onTap: () => Get.toNamed(Routes.searchPage),
+                      child: SvgPicture.asset(
+                        R.assetsImagesSearch,
+                        color: Colors.black87,
+                        width: 30,
+                      )),
 
                   Box.hBox20
                 ],
@@ -83,7 +91,7 @@ class _ComplexPageState extends State<ComplexPage>
               Expanded(
                   child: TabBarView(
                 controller: tabController,
-                children: const [Text('我的'), Text('我的'), Text('我的')],
+                children: [MainPage(), Text('我的'), AskPage()],
               )),
             ],
           ),

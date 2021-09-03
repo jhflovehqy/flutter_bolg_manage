@@ -2,6 +2,7 @@
 import 'package:blog/http/http_request.dart';
 import 'package:blog/http/request.dart';
 import 'package:blog/http/request_api.dart';
+import 'package:blog/model/banner_mode.dart';
 import 'package:blog/model/collect_model.dart';
 import 'package:blog/model/points_detail.dart';
 import 'package:blog/model/project_model.dart';
@@ -66,6 +67,28 @@ class RequestRepository{
       SpUtil.putUserInfo(loginInfo);
       if(success != null){
         success(loginInfo);
+      }
+    }, fail: (code, msg) {
+      if(fail != null){
+        fail(code , msg);
+      }
+    });
+  }
+
+
+  ///收藏|取消收藏 文章接口
+  ///[id]文章ID
+  /// [success] 请求成功回调
+  /// [fail] 请求失败回调
+  getUserInfo( {
+    Success<UserEntity>? success,
+    Fail? fail,
+  }){
+    Request.get<dynamic>(RequestApi.apiUserInfo, {} , dialog: false, success: (data) {
+      if(success != null){
+        var userInfo = data["userInfo"];
+        userInfo = UserEntity.fromJson(userInfo);
+        success(userInfo);
       }
     }, fail: (code, msg) {
       if(fail != null){
@@ -207,6 +230,49 @@ class RequestRepository{
     Request.post<dynamic>(RequestApi.apiLogout , {} , dialog: false, success: (data) {
       if(success != null){
         success(true);
+      }
+    }, fail: (code, msg) {
+      if(fail != null){
+        fail(code , msg);
+      }
+    });
+  }
+
+
+  ///请求项目列表接口
+  ///[id]文章ID
+  /// [success] 请求成功回调
+  /// [fail] 请求失败回调
+  requestAskModule(int page , {
+    SuccessOver<List<ProjectDetail>>? success,
+    Fail? fail,
+  }){
+    Request.get<dynamic>(RequestApi.apiAsk.replaceFirst(RegExp('page'), '$page'), {},dialog: false, success: (data) {
+      ProjectPage pageData = ProjectPage.fromJson(data);
+      var list = pageData.datas.map((value) {
+        return ProjectDetail.fromJson(value);
+      }).toList();
+      if(success != null){
+        success(list , pageData.over);
+      }
+    }, fail: (code, msg) {
+      if(fail != null){
+        fail(code , msg);
+      }
+    });
+  }
+
+  ///获取首页的Banner图片
+  getBanner({
+    Success<List<Banners>>? success,
+    Fail? fail,
+  }){
+    Request.get<List<dynamic>>(RequestApi.apiBanner , {} , dialog: false, success: (data) {
+      if(success != null){
+        var list = data.map((value) {
+          return Banners.fromJson(value);
+        }).toList();
+        success(list);
       }
     }, fail: (code, msg) {
       if(fail != null){

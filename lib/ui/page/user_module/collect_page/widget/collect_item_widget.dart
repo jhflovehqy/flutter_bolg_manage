@@ -93,14 +93,16 @@ class CollectItemWidget extends StatelessWidget {
               ),
             ),
             Box.hBox5,
-
-            ClipRRect(
-              borderRadius: BorderRadius.circular(5),
-              child: Image.network(
-                collect.envelopePic,
-                fit: BoxFit.cover,
-                width: 72,
-                height: 72,
+            Visibility(
+              visible: !collect.envelopePic.isEmpty,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(5),
+                child: Image.network(
+                  collect.envelopePic,
+                  fit: BoxFit.cover,
+                  width: 72,
+                  height: 72,
+                ),
               ),
             )
           ],

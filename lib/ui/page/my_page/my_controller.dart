@@ -26,6 +26,15 @@ class MyController extends BaseGetController {
     }
   }
 
+  /// 更新用户信息，每次进入时更新
+  void notifyUserInfo(){
+    request.getUserInfo(success: (data){
+      userInfo = data;
+      SpUtil.deleteUserInfo();
+      SpUtil.putUserInfo(userInfo);
+      update();
+    });
+  }
 
 
 

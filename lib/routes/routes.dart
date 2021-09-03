@@ -4,6 +4,8 @@ import 'package:blog/ui/page/login_page/login_binding.dart';
 import 'package:blog/ui/page/login_page/login_page.dart';
 import 'package:blog/ui/page/register_page/register_binding.dart';
 import 'package:blog/ui/page/register_page/register_page.dart';
+import 'package:blog/ui/page/search_page/search_binding.dart';
+import 'package:blog/ui/page/search_page/search_page.dart';
 import 'package:blog/ui/page/splash_page/splash_binding.dart';
 import 'package:blog/ui/page/splash_page/splash_page.dart';
 import 'package:blog/ui/page/user_module/about_page/about_binding.dart';
@@ -68,6 +70,9 @@ abstract class Routes {
   ///我的收藏
   static const String collectPage = '/collect';
 
+  ///搜索页面
+  static const String searchPage = '/search';
+
   ///页面合集
   static final routePage = [
     GetPage(
@@ -122,5 +127,9 @@ abstract class Routes {
         name: collectPage,
         page: () => const CollectPage(),
         binding: CollectBinding()),
+    GetPage(
+        name: searchPage,
+        page: () => const SearchPage(),
+        binding: SearchBinding()),
   ];
 }

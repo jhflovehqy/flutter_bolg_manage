@@ -180,7 +180,7 @@ class ProjectDetail{
     publishTime = json['publishTime'];
     realSuperChapterId = json['realSuperChapterId'];
     selfVisible = json['selfVisible'];
-    shareDate = json['shareDate'];
+    shareDate = json['shareDate'] ?? 0;
     shareUser = json['shareUser'];
     superChapterId = json['superChapterId'];
     superChapterName = json['superChapterName'];

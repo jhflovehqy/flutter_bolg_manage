@@ -20,6 +20,7 @@ import 'package:get/get.dart';
 class MyPage extends GetSaveView<MyController> {
   const MyPage({Key? key}) : super(key: key);
 
+
   @override
   Widget build(BuildContext context) {
     return Container(

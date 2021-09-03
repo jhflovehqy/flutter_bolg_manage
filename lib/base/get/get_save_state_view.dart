@@ -1,3 +1,4 @@
+import 'package:blog/http/http_request.dart';
 import 'package:get/get.dart';
 import 'package:flutter/cupertino.dart';
 
@@ -19,6 +20,9 @@ abstract class GetSaveView<T extends GetxController> extends StatefulWidget {
   ///Get 局部更新字段
   get updateId => null;
 
+  ///widget生命周期
+  get lifecycle => null;
+
   @protected
   Widget build(BuildContext context);
 
@@ -30,7 +34,7 @@ abstract class GetSaveView<T extends GetxController> extends StatefulWidget {
 /// @name : jhf
 /// @description :基类,可自动装载的状态管理
 class AutoDisposeState<S extends GetxController> extends State<GetSaveView>
-    with AutomaticKeepAliveClientMixin<GetSaveView>{
+    with AutomaticKeepAliveClientMixin<GetSaveView> ,WidgetsBindingObserver {
 
 
   AutoDisposeState();
@@ -48,12 +52,26 @@ class AutoDisposeState<S extends GetxController> extends State<GetSaveView>
   @override
   void initState() {
     super.initState();
+    if(widget.lifecycle != null){
+      WidgetsBinding.instance?.addObserver(this);
+    }
   }
 
   @override
   void dispose() {
     Get.delete<S>();
+    if(widget.lifecycle != null) {
+      WidgetsBinding.instance?.removeObserver(this);
+    }
     super.dispose();
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    super.didChangeAppLifecycleState(state);
+    if(widget.lifecycle != null) {
+      widget.lifecycle(state);
+    }
   }
 
   @override
