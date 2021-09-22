@@ -1,4 +1,5 @@
 import 'package:blog/res/shadow_style.dart';
+import 'package:blog/ui/dialog/dialog_share_article.dart';
 import 'package:blog/ui/page/complex_module/complex_page/complex_page.dart';
 import 'package:blog/ui/page/my_page/my_controller.dart';
 import 'package:blog/ui/page/my_page/my_page.dart';
@@ -8,6 +9,7 @@ import 'package:blog/res/colors.dart';
 import 'package:blog/res/strings.dart';
 import 'package:blog/ui/page/home_page/widget/home_tab_title.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 /// @class : HomePage
@@ -22,19 +24,46 @@ class HomePage extends StatefulWidget {
 }
 
 class HomeTabOptionsState extends State<HomePage>
-    with SingleTickerProviderStateMixin {
+    with SingleTickerProviderStateMixin, WidgetsBindingObserver {
+
+  ///控制器
   TabController? tabController;
+
+  ///监听应用从后台切换到前台时，读取粘贴板中的数据，验证URL，已保存分享
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    super.didChangeAppLifecycleState(state);
+    if (state == AppLifecycleState.resumed) {
+      var clipboardData = Clipboard.getData(Clipboard.kTextPlain);
+      clipboardData.then((value){
+        debugPrint("clipboardData=> ${value?.text}");
+        if(value != null
+            && value.text != null
+            && value.text!.isNotEmpty
+            && (value.text!.startsWith("https://")
+            || value.text!.startsWith("http://"))) {
+          Get.dialog(ShareArticleDialog(url :  value.text!));
+        }
+      });
+    }
+  }
 
   @override
   void initState() {
     tabController = TabController(length: 3, vsync: this);
+    WidgetsBinding.instance?.addObserver(this);
+
     ///监听TabBar切换事件
     tabController?.addListener(() {
       var index = tabController?.index;
+
       ///修复执行2次的BUG,增加条件
       if (tabController?.index == tabController?.animation?.value) {
         if (index == tabController!.length - 1) {
-          Get.find<MyController>().notifyUserInfo();
+          Get.find<MyController>()
+            ..notifyUserInfo()
+            ..notifyBrowseHistory()
+            ..notifyShareArticle();
         }
       }
     });
@@ -44,6 +73,7 @@ class HomeTabOptionsState extends State<HomePage>
   void dispose() {
     super.dispose();
     tabController?.dispose();
+    WidgetsBinding.instance?.removeObserver(this);
   }
 
   @override
@@ -52,14 +82,11 @@ class HomeTabOptionsState extends State<HomePage>
       backgroundColor: ColorStyle.color_F8F9FC,
       body: TabBarView(
         controller: tabController,
-        children: const[
-          ComplexPage(),
-          ProjectPage(),
-          MyPage()
-        ],
+        children: const [ComplexPage(), ProjectPage(), MyPage()],
       ),
       bottomNavigationBar: Container(
-        decoration: ShadowStyle.white12TopSpread4Blur10(radius :0 ),
+        height: 65,
+        decoration: ShadowStyle.white12TopSpread4Blur10(radius: 0),
         child: TabBar(
           indicator: const BoxDecoration(),
           labelColor: ColorStyle.color_24CF5F,

@@ -16,8 +16,6 @@ import 'dialog_base.dart';
 /// @name : jhf
 /// @description : 分享弹窗
 class ShareDialog extends StatelessWidget {
-
-
   String url = 'https://www.baidu.com';
 
   ShareDialog({Key? key, this.url = 'https://www.baidu.com'}) : super(key: key);
@@ -50,10 +48,11 @@ class ShareDialog extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             ///浏览器打开
-            _buildShareIcon(ColorStyle.color_24CF5F , Icons.public, () => Navigate.launchInBrowser(url)),
+            _buildShareIcon(ColorStyle.color_24CF5F, Icons.public,
+                () => Navigate.launchInBrowser(url)),
 
             ///保存在本地
-            _buildShareIcon(ColorStyle.color_FE8C28 , Icons.download, () {
+            _buildShareIcon(ColorStyle.color_FE8C28, Icons.download, () {
               ToastUtils.show(StringStyles.saveSuccess.tr);
             })
           ],
@@ -95,12 +94,12 @@ class ShareDialog extends StatelessWidget {
     ));
   }
 
-  Widget _buildShareIcon(Color color , IconData icon, VoidCallback onTap) {
+  Widget _buildShareIcon(Color color, IconData icon, VoidCallback onTap) {
     return GestureDetector(
       onTap: onTap,
       child: Container(
         padding: const EdgeInsets.all(8),
-        child:  Icon(
+        child: Icon(
           icon,
           color: color,
           size: 30,

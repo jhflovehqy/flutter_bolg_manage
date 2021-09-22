@@ -2,7 +2,7 @@ import 'package:get/get.dart';
 
 /// @class : StringStyles
 /// @name : jhf
-/// @description :字符管理 暂时不接入国际化
+/// @description :字符管理
 class StringStyles{
 
   static const String appName = 'appName';
@@ -31,7 +31,7 @@ class StringStyles{
   static const String homeMy = 'homeMy';
   static const String homeCollect = 'homeCollect';
   static const String homePoints = 'homePoints';
-  static const String homeFollow = 'homeFollow';
+  static const String homePartake = 'homePartake';
   static const String homeHistory = 'homeHistory';
   static const String homeUserInfo = 'homeUserInfo';
   static const String homeAbout = 'homeAbout';
@@ -86,6 +86,7 @@ class StringStyles{
   static const String refreshHeaderFailed= "refreshHeaderFailed";
   static const String refreshHeaderSuccess = "refreshHeaderSuccess";
   static const String refreshHeaderFreed = "refreshHeaderFreed";
+  static const String refreshEmpty = "refreshEmpty";
 
   static const String collectTitle = "collectTitle";
 
@@ -99,8 +100,26 @@ class StringStyles{
   static const String saveSuccess = "saveSuccess";
 
   static const String tabHome= "tabHome";
-  static const String tabHottest = "tabHottest";
+  static const String tabSquare= "tabSquare";
   static const String tabAsk = "tabAsk";
+  static const String tabWechatPublic = "tabWechatPublic";
+  static const String tabWechatSwitch = "tabWechatSwitch";
+  static const String tabWechatDelete = "tabWechatDelete";
+
+  static const String searchHint = "searchHint";
+  static const String search = "search";
+  static const String searchHistory = "searchHistory";
+  static const String searchHotWord = "searchHotWord";
+
+  static const String historyTitle = "historyTitle";
+
+  static const String shareArticleTitle = "shareArticleTitle";
+  static const String shareArticleEnter = "shareArticleEnter";
+  static const String shareArticleHint = "shareArticleHint";
+  static const String shareArticleEdit = "shareArticleEdit";
+  static const String shareArticleSuccess = "shareArticleSuccess";
+
+  static const String shareTitle = "shareTitle";
 }
 
 ///使用Get配置语言环境
@@ -132,7 +151,7 @@ class Messages extends Translations{
       StringStyles.homeMy : '我的',
       StringStyles.homeCollect : '收藏',
       StringStyles.homePoints : '积分',
-      StringStyles.homeFollow : '关注',
+      StringStyles.homePartake : '分享',
       StringStyles.homeHistory : '历史',
       StringStyles.homeUserInfo : '个人信息',
       StringStyles.homeAbout : '关于',
@@ -188,8 +207,23 @@ class Messages extends Translations{
       StringStyles.shareBrowser : "浏览器打开",
       StringStyles.saveSuccess :  "保存成功",
       StringStyles.tabHome :  "首页",
-      StringStyles.tabHottest :  "热门",
+      StringStyles.tabSquare :  "广场",
       StringStyles.tabAsk :  "问答",
+      StringStyles.searchHint :  "搜索您想要的内容",
+      StringStyles.search :  "搜索",
+      StringStyles.searchHistory :  "搜索历史",
+      StringStyles.searchHotWord :  "热搜榜",
+      StringStyles.refreshEmpty : '没有更多内容啦~',
+      StringStyles.tabWechatPublic : '推荐一波优秀的技术公众号~',
+      StringStyles.tabWechatSwitch : '换一批  ',
+      StringStyles.tabWechatDelete : '不感兴趣',
+      StringStyles.historyTitle : '浏览历史',
+      StringStyles.shareArticleTitle : '分享文章',
+      StringStyles.shareArticleEnter : '分享到本应用',
+      StringStyles.shareArticleHint : '给文章设置一个响亮的标题把~',
+      StringStyles.shareArticleEdit : '请输入文章标题~',
+      StringStyles.shareArticleSuccess :'分享成功',
+      StringStyles.shareTitle : '我的分享',
     },
     'zh_HK' :{
       StringStyles.appName : '博時',
@@ -215,7 +249,7 @@ class Messages extends Translations{
       StringStyles.homeMy : '我的',
       StringStyles.homeCollect : '收藏',
       StringStyles.homePoints : '積分',
-      StringStyles.homeFollow : '關注',
+      StringStyles.homePartake : '分享',
       StringStyles.homeHistory : '歷史',
       StringStyles.homeUserInfo : '個人信息',
       StringStyles.homeAbout : '關於',
@@ -262,6 +296,22 @@ class Messages extends Translations{
       StringStyles.refreshHeaderFreed : "釋放刷新",
       StringStyles.refreshHeaderFailed : "刷新失敗!",
       StringStyles.refreshHeaderSuccess : "刷新成功",
+      StringStyles.collectTitle : "我的收藏",
+      StringStyles.enter : "確認",
+      StringStyles.quit : "取消",
+      StringStyles.shareApplication : "實用博客APP推薦給您",
+      StringStyles.shareHint : "博時,您的博客管家",
+      StringStyles.shareSaveLocal : "保存到本地",
+      StringStyles.shareBrowser : "瀏覽器打開",
+      StringStyles.saveSuccess :  "保存成功",
+      StringStyles.tabHome :  "首頁",
+      StringStyles.tabSquare :  "廣場",
+      StringStyles.tabAsk :  "問答",
+      StringStyles.searchHint :  "搜索您想要的內容",
+      StringStyles.search :  "搜索",
+      StringStyles.searchHistory :  "搜索歷史",
+      StringStyles.searchHotWord :  "熱搜榜",
+      StringStyles.refreshEmpty : '沒有更多內容啦~',
     },
     'zh_TW' :{
       StringStyles.appName : '博時',
@@ -287,7 +337,7 @@ class Messages extends Translations{
       StringStyles.homeMy : '我的',
       StringStyles.homeCollect : '收藏',
       StringStyles.homePoints : '積分',
-      StringStyles.homeFollow : '關注',
+      StringStyles.homePartake : '分享',
       StringStyles.homeHistory : '歷史',
       StringStyles.homeUserInfo : '個人信息',
       StringStyles.homeAbout : '關於',
@@ -334,6 +384,22 @@ class Messages extends Translations{
       StringStyles.refreshHeaderFreed : "釋放刷新",
       StringStyles.refreshHeaderFailed : "刷新失敗!",
       StringStyles.refreshHeaderSuccess : "刷新成功",
+      StringStyles.collectTitle : "我的收藏",
+      StringStyles.enter : "確認",
+      StringStyles.quit : "取消",
+      StringStyles.shareApplication : "實用博客APP推薦給您",
+      StringStyles.shareHint : "博時,您的博客管家",
+      StringStyles.shareSaveLocal : "保存到本地",
+      StringStyles.shareBrowser : "瀏覽器打開",
+      StringStyles.saveSuccess :  "保存成功",
+      StringStyles.tabHome :  "首頁",
+      StringStyles.tabSquare :  "廣場",
+      StringStyles.tabAsk :  "問答",
+      StringStyles.searchHint :  "搜索您想要的內容",
+      StringStyles.search :  "搜索",
+      StringStyles.searchHistory :  "搜索歷史",
+      StringStyles.searchHotWord :  "熱搜榜",
+      StringStyles.refreshEmpty : '沒有更多內容啦~',
     },
     'en_US' : {
       StringStyles.appName : 'BlogTime',
@@ -359,7 +425,7 @@ class Messages extends Translations{
       StringStyles.homeMy : 'mine',
       StringStyles.homeCollect : 'collect',
       StringStyles.homePoints : 'Points',
-      StringStyles.homeFollow : 'Follow',
+      StringStyles.homePartake : 'Share',
       StringStyles.homeHistory : 'History',
       StringStyles.homeUserInfo : 'Personal information',
       StringStyles.homeAbout : 'About',
@@ -406,6 +472,22 @@ class Messages extends Translations{
       StringStyles.refreshHeaderFreed : "Release refresh",
       StringStyles.refreshHeaderFailed : "Refresh failed!",
       StringStyles.refreshHeaderSuccess : "Refresh successfully",
+      StringStyles.collectTitle : "My Collection",
+      StringStyles.enter : "Confirm",
+      StringStyles.quit : "Quit",
+      StringStyles.shareApplication : "Practical blog app recommended to you",
+      StringStyles.shareHint : "Bosera, your blog steward",
+      StringStyles.shareSaveLocal : "Save to local",
+      StringStyles.shareBrowser : "Browser opens",
+      StringStyles.saveSuccess :  "Saved successfully",
+      StringStyles.tabHome :  "FrontPage",
+      StringStyles.tabSquare :  "Square",
+      StringStyles.tabAsk :  "Q&A",
+      StringStyles.searchHint :  "Search what you want",
+      StringStyles.search :  "Search",
+      StringStyles.searchHistory :  "Search History",
+      StringStyles.searchHotWord :  "Hot search list",
+      StringStyles.refreshEmpty : 'No more content~',
     }
   };
 

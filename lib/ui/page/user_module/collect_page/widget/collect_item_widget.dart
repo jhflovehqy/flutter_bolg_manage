@@ -1,9 +1,10 @@
 import 'package:blog/res/colors.dart';
 import 'package:blog/res/style.dart';
+import 'package:blog/util/web_util.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:blog/model/collect_model.dart';
-import 'package:get/get.dart';
+import 'package:flutter_html/flutter_html.dart';
 
 /// @class : PointsItemWidget
 /// @date : 2021/08/25
@@ -12,7 +13,7 @@ import 'package:get/get.dart';
 class CollectItemWidget extends StatelessWidget {
 
 
-  ///排名信息
+  ///收藏信息
   CollectDetail collect;
 
   CollectItemWidget({Key? key, required this.collect}) : super(key: key);
@@ -20,8 +21,7 @@ class CollectItemWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: (){
-      },
+      onTap: ()=> WebUtil.toWebPageCollect(collect),
       child: Container(
         width: double.infinity,
         margin: const EdgeInsets.symmetric(horizontal: 10),
@@ -63,11 +63,11 @@ class CollectItemWidget extends StatelessWidget {
                   ),
 
                   Box.vBox10,
-                  Text(
-                    collect.desc,
-                    overflow: TextOverflow.ellipsis,
-                    maxLines: 2,
-                    style: Styles.style_6A6969_14,
+                  Html(
+                    data : collect.desc,
+                    // overflow: TextOverflow.ellipsis,
+                    // maxLines: 2,
+                    // style: Styles.style_6A6969_14,
                   ),
 
                   Box.vBox10,
@@ -94,7 +94,7 @@ class CollectItemWidget extends StatelessWidget {
             ),
             Box.hBox5,
             Visibility(
-              visible: !collect.envelopePic.isEmpty,
+              visible: collect.envelopePic.isNotEmpty,
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(5),
                 child: Image.network(

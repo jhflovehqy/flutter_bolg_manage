@@ -20,7 +20,6 @@ class SplashController extends BaseGetController {
   }
 
   lazyInitAnim(){
-    ///必须延时一下等待绘制完毕，直接设置是没有效果滴
     Future.delayed(const Duration(milliseconds: 200), () {
        opacityLevel = 1.0;
        update();

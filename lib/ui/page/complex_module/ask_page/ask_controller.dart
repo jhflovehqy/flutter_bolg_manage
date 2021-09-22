@@ -25,11 +25,11 @@ class AskController extends BaseGetPageController {
       if (refresh != Refresh.down) {
         projectData.clear();
       }
-      loadState.value = true;
       projectData.addAll(data);
+      showSuccess(projectData);
       update();
     }, fail: (code, msg) {
-      loadState.value = true;
+      showError();
       RefreshExtension.onError(controller, refresh);
     });
 

@@ -12,8 +12,6 @@ class BaseGetController extends GetxController{
 
   ///HTTP请求仓库
   late RequestRepository request;
-  ///加载状态
-  // var loadState = false.obs;
 
 
   @override
@@ -21,21 +19,6 @@ class BaseGetController extends GetxController{
     super.onInit();
     request = Get.find<RequestRepository>();
   }
-
-
-
-  // ///预留初次加载，注意只供上拉下拉使用
-  // initPullLoading(RefreshController controller){
-  // }
-  //
-  // ///预留上拉刷新
-  // onLoadRefresh(RefreshController controller){
-  // }
-  //
-  // ///预留下拉加载
-  // onLoadMore(RefreshController controller){
-  //
-  // }
 
 
 

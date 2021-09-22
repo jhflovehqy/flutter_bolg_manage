@@ -147,11 +147,18 @@ class _BannerState extends State<BannerWidget> {
 
   /// 初始化定时任务
   _initTimer() {
+    if (_timer != null) {
+      _timer?.cancel();
+      _timer = null;
+    }
     _timer ??= Timer.periodic(const Duration(seconds: 3), (t) {
       if(widget.banner.isEmpty){
         return;
       }
       _curIndex++;
+      if (!_pageController.hasClients){
+        return;
+      }
       _pageController.animateToPage(
         _curIndex,
         duration: const Duration(milliseconds: 300),

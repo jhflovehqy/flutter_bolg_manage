@@ -19,68 +19,67 @@ class WebViewPage extends GetCommonView<WebController> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Column(
+        children: [
+          Stack(
             children: [
-              Stack(
-                children: [
-                  ToolBar(
-                    backColor: ColorStyle.color_474747 ,
-                    backOnTap: () => Get.back(),
-                    title: controller.detail.title,
-                  ),
-                  Positioned(
-                    right: 14,
-                    bottom: 5,
-                    width: 36,
-                    height: 36,
-                    child: Material(
-                      color: Colors.transparent,
-                      child: InkWell(
-                        borderRadius: const BorderRadius.all(
-                          Radius.circular(20),
-                        ),
-                        splashColor: ColorStyle.color_E2E3E8_66,
-                        onTap: () {
-                        },
-                        child: const Icon(
-                          Icons.open_in_new,
-                          color: ColorStyle.color_474747,
-                          size: 22,
-                        ),
-                      ),
+              ToolBar(
+                backColor: ColorStyle.color_474747,
+                backOnTap: () => Get.back(),
+                title: controller.detail.title,
+              ),
+              Positioned(
+                right: 14,
+                bottom: 5,
+                width: 36,
+                height: 36,
+                child: Material(
+                  color: Colors.transparent,
+                  child: InkWell(
+                    borderRadius: const BorderRadius.all(
+                      Radius.circular(20),
+                    ),
+                    splashColor: ColorStyle.color_E2E3E8_66,
+                    onTap: () {},
+                    child: const Icon(
+                      Icons.open_in_new,
+                      color: ColorStyle.color_474747,
+                      size: 22,
                     ),
                   ),
-                ],
-              ),
-
-
-              Visibility(
-                visible: controller.progress < 1,
-                child: LinearProgressIndicator(
-                  minHeight: 2,
-                  backgroundColor: ColorStyle.color_F9F9F9,
-                  color: ColorStyle.color_24CF5F,
-                  value: controller.progress,
                 ),
               ),
+            ],
+          ),
+          Expanded(
+            child: Stack(
+              children: [
 
-
-
-              Expanded(
-                child: WebView(
+                WebView(
                   initialUrl: controller.detail.link,
                   javascriptMode: JavascriptMode.unrestricted,
                   onProgress: (pro) {
-                    controller
-                      ..progress = (pro / 100).toDouble()
-                      ..update();
+                    controller.progress.value = (pro / 100).toDouble();
                   },
                 ),
-              ),
 
-              const WebViewBottomWidget(),
-
-            ],
+                Obx(() =>  Visibility(
+                      visible: controller.progress < 1,
+                      child: LinearProgressIndicator(
+                        minHeight: 2,
+                        backgroundColor: ColorStyle.color_F9F9F9,
+                        color: ColorStyle.color_24CF5F,
+                        value: controller.progress.value,
+                      ),
+                    )),
+              ],
+            ),
           ),
+          Visibility(
+            visible: controller.detail.id > 0,
+            child:  const WebViewBottomWidget(),
+          ),
+        ],
+      ),
     );
   }
 }

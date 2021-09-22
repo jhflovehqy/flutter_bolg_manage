@@ -92,13 +92,14 @@ class MyPage extends GetSaveView<MyController> {
                   ),
                 ),
 
-                ///关注数量
+                ///分享列表
                 Expanded(
                   flex: 1,
-                  child: TitleContentWidget(
-                    title: StringStyles.homeFollow.tr,
-                    content: "0",
-                  ),
+                  child: Obx(() =>TitleContentWidget(
+                    title: StringStyles.homePartake.tr,
+                    content: '${controller.share}',
+                    onTap: () => Get.toNamed(Routes.sharePage),
+                  )),
                 ),
 
                 ///积分
@@ -114,10 +115,11 @@ class MyPage extends GetSaveView<MyController> {
                 ///历史
                 Expanded(
                     flex: 1,
-                    child: TitleContentWidget(
+                    child: Obx(() => TitleContentWidget(
                       title: StringStyles.homeHistory.tr,
-                      content: "0",
-                    )),
+                      content: '${controller.browseHistory.value}',
+                      onTap: () => Get.toNamed(Routes.historyPage),
+                    ))),
               ],
             ),
           ),

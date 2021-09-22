@@ -5,6 +5,7 @@ import 'package:blog/res/style.dart';
 import 'package:blog/routes/routes.dart';
 import 'package:blog/ui/page/complex_module/ask_page/ask_page.dart';
 import 'package:blog/ui/page/complex_module/main_page/main_page.dart';
+import 'package:blog/ui/page/complex_module/square_page/square_page.dart';
 import 'package:blog/widget/ripple_widget.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter/material.dart';
@@ -63,7 +64,7 @@ class _ComplexPageState extends State<ComplexPage>
                           text: StringStyles.tabHome.tr,
                         ),
                         Tab(
-                          text: StringStyles.tabHottest.tr,
+                          text: StringStyles.tabSquare.tr,
                         ),
                         Tab(
                           text: StringStyles.tabAsk.tr,
@@ -79,10 +80,13 @@ class _ComplexPageState extends State<ComplexPage>
                   Ripple(
                       circular: 20,
                       onTap: () => Get.toNamed(Routes.searchPage),
-                      child: SvgPicture.asset(
-                        R.assetsImagesSearch,
-                        color: Colors.black87,
-                        width: 30,
+                      child: Padding(
+                        padding: const EdgeInsets.all(5),
+                        child: SvgPicture.asset(
+                          R.assetsImagesSearch,
+                          color: Colors.black87,
+                          width: 30,
+                        ),
                       )),
 
                   Box.hBox20
@@ -91,7 +95,7 @@ class _ComplexPageState extends State<ComplexPage>
               Expanded(
                   child: TabBarView(
                 controller: tabController,
-                children: [MainPage(), Text('我的'), AskPage()],
+                children: const [MainPage(), SquarePage(), AskPage()],
               )),
             ],
           ),

@@ -1,24 +1,26 @@
-
-
-
 /// @class : ProjectPage
 /// @date : 2021/08/23
 /// @name : jhf
 /// @description : 分页数据
 class ProjectPage {
-
   ///当前页数
   int curPage = 0;
+
   ///数据
   List datas = [];
+
   ///偏移
   int offset = 0;
+
   ///是否为最后一页
   bool over = false;
+
   ///页数长度
   int pageCount = 0;
+
   ///当前页大小
   int size = 0;
+
   ///数据总大小
   int total = 0;
 
@@ -42,7 +44,6 @@ class ProjectPage {
     datas = json['datas'];
   }
 
-
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
     data["curPage"] = curPage;
@@ -56,9 +57,10 @@ class ProjectPage {
   }
 }
 
-class ProjectTag{
+class ProjectTag {
   ///分类名称
   String name = "";
+
   ///URL
   String url = "";
 
@@ -84,8 +86,7 @@ class ProjectTag{
 /// @date : 2021/08/23
 /// @name : jhf
 /// @description : 项目详情
-class ProjectDetail{
-
+class ProjectDetail {
   String apkLink = "";
   int audit = 0;
   String author = "";
@@ -192,7 +193,6 @@ class ProjectDetail{
     zan = json['zan'];
   }
 
-
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
     data['apkLink'] = apkLink;
@@ -230,4 +230,6 @@ class ProjectDetail{
     data['zan'] = zan;
     return data;
   }
+
+
 }

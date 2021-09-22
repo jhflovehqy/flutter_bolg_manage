@@ -78,11 +78,6 @@ class AboutPage extends GetCommonView<AboutController> {
               child: Text(''),
             ),
 
-             Text(
-              StringStyles.aboutCopyright.tr,
-              textAlign: TextAlign.center,
-            ),
-            Box.vBox12,
           ],
         ),
       ),

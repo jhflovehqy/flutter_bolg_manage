@@ -25,11 +25,11 @@ class RankingController extends BaseGetPageController {
       if(refresh != Refresh.down){
         rankingList.clear();
       }
-      loadState.value = true;
       rankingList.addAll(data);
+      showSuccess(rankingList);
       update();
     },fail:  (code , msg){
-      loadState.value = true;
+      showError();
       RefreshExtension.onError(controller, refresh);
     });
   }

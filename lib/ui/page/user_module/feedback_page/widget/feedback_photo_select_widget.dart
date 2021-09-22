@@ -1,8 +1,6 @@
 import 'package:blog/base/get/get_common_view.dart';
 import 'package:blog/res/colors.dart';
-import 'package:blog/res/strings.dart';
 import 'package:blog/ui/page/user_module/feedback_page/feedback_controller.dart';
-import 'package:blog/util/toast_util.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';

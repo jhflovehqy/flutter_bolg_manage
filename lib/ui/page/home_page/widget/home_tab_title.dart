@@ -20,7 +20,7 @@ class TabTitleIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     return Tab(
       text: title,
-      iconMargin: const EdgeInsets.all(5),
+      iconMargin: const EdgeInsets.all(4),
       icon: Icon(
         icon,
       ),

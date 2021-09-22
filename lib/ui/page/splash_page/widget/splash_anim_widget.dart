@@ -24,7 +24,7 @@ class SplashAnimWidget extends GetCommonView<SplashController> {
               : Routes.homePage);
         },
         opacity: controller.opacityLevel,
-        duration: const Duration(milliseconds: 1000),
+        duration: const Duration(milliseconds: 2000),
         child: Container(
           margin: const EdgeInsets.only(top: 120),
           alignment: Alignment.center,
@@ -33,8 +33,8 @@ class SplashAnimWidget extends GetCommonView<SplashController> {
               Image.asset(
                 R.assetsImagesApplication,
                 fit: BoxFit.fitWidth,
-                width: 120,
-                height: 120,
+                width: 110,
+                height: 110,
               ),
               Container(
                 margin: const EdgeInsets.only(top: 16),

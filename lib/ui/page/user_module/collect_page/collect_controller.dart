@@ -23,11 +23,11 @@ class CollectController extends BaseGetPageController {
       if (refresh != Refresh.down) {
         collectList.clear();
       }
-      loadState.value = true;
       collectList.addAll(data);
+      showSuccess(collectList);
       update();
     }, fail: (code, msg) {
-      loadState.value = true;
+      showError();
       RefreshExtension.onError(controller, refresh);
     });
   }

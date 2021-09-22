@@ -32,9 +32,22 @@ class RequestApi{
   static const String apiCollectDetail = 'lg/collect/list/page/json';
   ///问答列表
   static const String apiAsk = 'wenda/list/page/json';
+  ///广场列表
+  static const String apiSquare = 'user_article/list/page/json';
   ///首页banner轮播图
   static const String apiBanner = 'banner/json';
-
+  ///搜索热词
+  static const String apiHotWord = 'hotkey/json';
+  ///搜索文章
+  static const String apiSearchWord = 'article/query/page/json';
+  ///首页文章
+  static const String apiHome = 'article/list/page/json';
+  ///公众号列表
+  static const String apiWechatPublic = 'wxarticle/chapters/json';
+  ///分享文章到站点
+  static const String apiAddArticle = 'lg/user_article/add/json';
+  ///获取分享的文章列表
+  static const String apiShareArticleList = 'user/lg/private_articles/page/json';
 }
 
 

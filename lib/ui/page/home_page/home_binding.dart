@@ -1,6 +1,7 @@
 import 'package:blog/ui/page/complex_module/ask_page/ask_controller.dart';
 import 'package:blog/ui/page/complex_module/complex_page/complex_controller.dart';
 import 'package:blog/ui/page/complex_module/main_page/main_controller.dart';
+import 'package:blog/ui/page/complex_module/square_page/square_controller.dart';
 import 'package:blog/ui/page/my_page/my_controller.dart';
 import 'package:blog/ui/page/project_page/project_controller.dart';
 import 'package:get/get.dart';
@@ -18,5 +19,6 @@ class HomeBinding extends Bindings {
     Get.lazyPut(() => AskController());
     Get.lazyPut(() => MainController());
     Get.lazyPut(() => MyController());
+    Get.lazyPut(() => SquareController());
   }
 }

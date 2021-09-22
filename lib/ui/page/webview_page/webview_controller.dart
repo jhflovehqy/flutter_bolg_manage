@@ -1,7 +1,8 @@
 import 'package:blog/base/get/getx_controller_inject.dart';
+import 'package:blog/model/web_model.dart';
 import 'package:blog/util/toast_util.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
-import 'package:blog/model/project_model.dart';
 
 
 /// @class : WebViewController
@@ -11,11 +12,16 @@ import 'package:blog/model/project_model.dart';
 class WebController extends BaseGetController {
 
   ///加载URL
-  ProjectDetail detail =  Get.arguments;
+  WebEntity detail =  Get.arguments;
   ///进度条
-  double progress = 0.0;
+  var progress = 0.0.obs;
   ///是否点赞
   bool isCollect = false;
+
+  @override
+  void onInit() {
+    super.onInit();
+  }
 
 
   collectArticle(){

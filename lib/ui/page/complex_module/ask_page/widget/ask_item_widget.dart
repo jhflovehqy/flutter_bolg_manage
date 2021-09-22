@@ -3,6 +3,7 @@ import 'package:blog/res/colors.dart';
 import 'package:blog/res/style.dart';
 import 'package:blog/routes/routes.dart';
 import 'package:blog/ui/page/my_page/widget/head_circle_widget.dart';
+import 'package:blog/util/web_util.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -24,9 +25,7 @@ class AskListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: (){
-        Get.toNamed(Routes.webViewPage, arguments: detail);
-      },
+      onTap: () => WebUtil.toWebPage(detail),
       child: Container(
         width: double.infinity,
         margin: const EdgeInsets.symmetric(horizontal: 10),

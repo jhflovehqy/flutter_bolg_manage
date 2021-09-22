@@ -18,16 +18,15 @@ class PointsController extends BaseGetPageController {
       {Refresh refresh = Refresh.first}) {
     request.pointsDetail(page, success: (data, over) {
       RefreshExtension.onSuccess(controller, refresh, over);
-
       ///下拉刷新需要清除列表
       if (refresh != Refresh.down) {
         pointsList.clear();
       }
-      loadState.value = true;
       pointsList.addAll(data);
+      showSuccess(pointsList);
       update();
     }, fail: (code, msg) {
-      loadState.value = true;
+      showError();
       RefreshExtension.onError(controller, refresh);
     });
   }

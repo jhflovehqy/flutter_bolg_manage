@@ -14,6 +14,8 @@ import 'package:blog/ui/page/user_module/collect_page/collect_binding.dart';
 import 'package:blog/ui/page/user_module/collect_page/collect_page.dart';
 import 'package:blog/ui/page/user_module/feedback_page/feedback_binding.dart';
 import 'package:blog/ui/page/user_module/feedback_page/feedback_page.dart';
+import 'package:blog/ui/page/user_module/history_page/history_binding.dart';
+import 'package:blog/ui/page/user_module/history_page/history_page.dart';
 import 'package:blog/ui/page/user_module/points_page/points_binding.dart';
 import 'package:blog/ui/page/user_module/points_page/points_page.dart';
 import 'package:blog/ui/page/user_module/ranking_page/ranking_binding.dart';
@@ -21,6 +23,8 @@ import 'package:blog/ui/page/user_module/ranking_page/ranking_page.dart';
 import 'package:blog/ui/page/user_module/setting_page/setting_binding.dart';
 import 'package:blog/ui/page/user_module/setting_page/setting_page.dart';
 import 'package:blog/ui/page/user_module/setting_page/widget/setting_language_page.dart';
+import 'package:blog/ui/page/user_module/share_page/share_binding.dart';
+import 'package:blog/ui/page/user_module/share_page/share_page.dart';
 import 'package:blog/ui/page/user_module/user_info_page/userinfo_binding.dart';
 import 'package:blog/ui/page/user_module/user_info_page/userinfo_page.dart';
 import 'package:blog/ui/page/webview_page/webview_binding.dart';
@@ -72,6 +76,12 @@ abstract class Routes {
 
   ///搜索页面
   static const String searchPage = '/search';
+
+  ///浏览记录
+  static const String historyPage = '/history';
+
+  ///分享页面
+  static const String sharePage = '/share';
 
   ///页面合集
   static final routePage = [
@@ -131,5 +141,13 @@ abstract class Routes {
         name: searchPage,
         page: () => const SearchPage(),
         binding: SearchBinding()),
+    GetPage(
+        name: historyPage,
+        page: () => const HistoryPage(),
+        binding: HistoryBinding()),
+    GetPage(
+        name: sharePage,
+        page: () => const SharePage(),
+        binding: ShareBinding()),
   ];
 }
