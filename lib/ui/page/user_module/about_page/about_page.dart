@@ -1,9 +1,12 @@
 import 'package:blog/app/package_info.dart';
 import 'package:blog/base/get/get_common_view.dart';
+import 'package:blog/model/web_model.dart';
 import 'package:blog/res/r.dart';
 import 'package:blog/res/strings.dart';
 import 'package:blog/res/style.dart';
 import 'package:blog/ui/page/user_module/about_page/about_controller.dart';
+import 'package:blog/util/constant.dart';
+import 'package:blog/util/web_util.dart';
 import 'package:blog/widget/_toolbar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -50,27 +53,30 @@ class AboutPage extends GetCommonView<AboutController> {
             ListTile(
               title:  Text(StringStyles.aboutGithub.tr),
               trailing: const Icon(Icons.keyboard_arrow_right),
-              onTap: (){
-
-              },
+              onTap: ()=> WebUtil.toWebPageOther(
+                title: StringStyles.aboutGithub.tr ,
+                link: Constant.githubLike,
+              ),
             ),
             DividerStyle.divider1HalfPadding20,
 
             ListTile(
               title:  Text(StringStyles.aboutCSDN.tr),
               trailing: const Icon(Icons.keyboard_arrow_right),
-              onTap: (){
-
-              },
+              onTap: ()=> WebUtil.toWebPageOther(
+                title: StringStyles.aboutCSDN.tr ,
+                link: Constant.csdnLike,
+              ),
             ),
             DividerStyle.divider1HalfPadding20,
 
             ListTile(
               title:  Text(StringStyles.aboutSupport.tr),
               trailing: const Icon(Icons.keyboard_arrow_right),
-              onTap: (){
-
-              },
+              onTap: ()=> WebUtil.toWebPageOther(
+                title: StringStyles.aboutSupport.tr ,
+                link: Constant.wanAndroidLike,
+              ),
             ),
             DividerStyle.divider1HalfPadding20,
 

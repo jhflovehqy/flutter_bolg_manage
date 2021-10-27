@@ -15,12 +15,14 @@ class HistoryItemWidget extends StatelessWidget {
   ///排名信息
   ProjectDetail detail;
 
-  HistoryItemWidget({Key? key, required this.detail}) : super(key: key);
+  Function(bool) onResult;
+
+  HistoryItemWidget({Key? key, required this.detail , required this.onResult}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => WebUtil.toWebPage(detail),
+      onTap: () => WebUtil.toWebPage(detail , onResult: onResult),
       child: Container(
         width: double.infinity,
         margin: const EdgeInsets.symmetric(horizontal: 10),

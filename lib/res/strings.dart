@@ -120,6 +120,10 @@ class StringStyles{
   static const String shareArticleSuccess = "shareArticleSuccess";
 
   static const String shareTitle = "shareTitle";
+  static const String collectSuccess = "collectSuccess";
+  static const String collectQuit = "collectQuit";
+
+  static const String notSupportLikes = "notSupportLikes";
 }
 
 ///使用Get配置语言环境
@@ -224,6 +228,9 @@ class Messages extends Translations{
       StringStyles.shareArticleEdit : '请输入文章标题~',
       StringStyles.shareArticleSuccess :'分享成功',
       StringStyles.shareTitle : '我的分享',
+      StringStyles.collectSuccess : '收藏成功',
+      StringStyles.collectQuit : '取消收藏成功',
+      StringStyles.notSupportLikes : "暂不支持点赞哟~"
     },
     'zh_HK' :{
       StringStyles.appName : '博時',

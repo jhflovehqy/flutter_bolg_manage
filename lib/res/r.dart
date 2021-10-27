@@ -29,6 +29,10 @@ class R {
   static const String assetsImagesHotWordItem = 'assets/svg/hotword_item.svg';
   static const String assetsImagesWechat = 'assets/svg/wechat.svg';
   static const String assetsImagesShare = 'assets/svg/share.svg';
+  static const String assetsImagesCollect = 'assets/svg/collect.svg';
+  static const String assetsImagesCollectQuit = 'assets/svg/collect_quit.svg';
+  static const String assetsImagesProgram = 'assets/svg/program.svg';
+  static const String assetsImagesDateTime= 'assets/svg/date_time.svg';
 
   ///----------------------------lottie---------------------------
   static const String assetsLottieLoading = 'assets/lottie/lottie_common_load.json';
@@ -37,7 +41,7 @@ class R {
   static const String assetsLottieRefreshHeader = 'assets/lottie/refresh_head_loading.json';
   static const String assetsLottieRefreshEmpty = 'assets/lottie/refresh_empty_page.json';
   static const String assetsLottieRefreshError = 'assets/lottie/refresh_error.json';
-
+  static const String assetsLottieCollect = 'assets/lottie/collect_success.json';
 
   ///微信公众号图片
   static Map<int , String> wechatPublic = {

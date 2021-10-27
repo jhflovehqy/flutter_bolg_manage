@@ -24,7 +24,10 @@ class ProjectPage extends GetSaveView<ProjectController> {
             itemCount: controller.projectData.length,
             itemBuilder: (BuildContext context, int index) {
               return ProjectListItem(
-                  controller.projectData[index]
+                  controller.projectData[index],
+                  (value){
+                    controller.projectData[index].collect = value;
+                  }
               );
             },
           ),

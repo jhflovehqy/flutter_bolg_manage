@@ -43,6 +43,7 @@ class SharePage extends GetCommonView<ShareController> {
                     itemBuilder: (BuildContext context, int index) {
                       return HistoryItemWidget(
                         detail: controller.shareList[index],
+                        onResult: (value)=> controller.shareList[index].collect = value,
                       );
                     },
                   )),

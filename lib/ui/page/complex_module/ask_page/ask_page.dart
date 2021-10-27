@@ -25,7 +25,10 @@ class AskPage extends GetSaveView<AskController> {
             itemCount: controller.projectData.length,
             itemBuilder: (BuildContext context, int index) {
               return AskListItem(
-                  controller.projectData[index]
+                controller.projectData[index],
+                onResult: (value) {
+                  controller.projectData[index].collect = value;
+                },
               );
             },
           ),

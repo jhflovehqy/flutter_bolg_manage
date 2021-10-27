@@ -296,6 +296,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.4.0"
+  mime:
+    dependency: transitive
+    description:
+      name: mime
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "1.0.1"
   nested:
     dependency: transitive
     description:
@@ -429,6 +436,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "0.27.1"
+  share:
+    dependency: "direct dev"
+    description:
+      name: share
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "2.0.4"
   shared_preferences:
     dependency: "direct dev"
     description:

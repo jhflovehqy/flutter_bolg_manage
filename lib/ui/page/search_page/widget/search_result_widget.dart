@@ -35,7 +35,12 @@ class SearchResultWidget extends GetCommonView<SearchController> {
                   return Material(
                       color: Colors.transparent,
                       child: Ripple(
-                          onTap: () =>WebUtil.toWebPage(controller.searchResult[index]),
+                          onTap: () =>WebUtil.toWebPage(
+                              controller.searchResult[index],
+                            onResult: (value){
+                              controller.searchResult[index].collect = value;
+                            }
+                          ),
                           child: SearchResultItem(
                             item: controller.searchResult[index],
                           )));

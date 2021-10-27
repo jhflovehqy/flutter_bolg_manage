@@ -77,7 +77,9 @@ class MainPage extends GetSaveView<MainController> {
                             return Material(
                               color: Colors.transparent,
                               child: Ripple(
-                                  onTap: () => WebUtil.toWebPage(controller.projectData[newIndex]),
+                                  onTap: () => WebUtil.toWebPage(controller.projectData[newIndex] , onResult: (value){
+                                    controller.projectData[newIndex].collect = value;
+                                  }),
                                   child: MainArticleItem(
                                     item: controller.projectData[newIndex],
                                     index: newIndex,

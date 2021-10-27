@@ -38,6 +38,7 @@ class CollectPage extends GetCommonView<CollectController> {
                     itemBuilder: (BuildContext context, int index) {
                       return CollectItemWidget(
                         collect: controller.collectList[index],
+                        result: ()=> controller.notifyPart(index),
                       );
                     },
                   )),

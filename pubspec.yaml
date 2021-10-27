@@ -73,6 +73,8 @@ dev_dependencies:
   pull_to_refresh: ^2.0.0
   #加载html标签
   flutter_html: ^2.1.2
+  #调用分享平台 https://pub.flutter-io.cn/packages/share
+  share: ^2.0.4
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -94,6 +96,7 @@ flutter:
     - assets/lottie/refresh_head_loading.json
     - assets/lottie/refresh_empty_page.json
     - assets/lottie/refresh_error.json
+    - assets/lottie/collect_success.json
   # assets:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg

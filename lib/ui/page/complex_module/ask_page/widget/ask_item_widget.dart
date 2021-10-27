@@ -15,17 +15,22 @@ import 'package:get/get.dart';
 /// @name : jhf
 /// @description :项目列表item widget
 class AskListItem extends StatelessWidget {
+
+
   ProjectDetail detail;
+
+  Function(bool)? onResult;
 
   AskListItem(
       this.detail, {
         Key? key,
+        this.onResult
       }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => WebUtil.toWebPage(detail),
+      onTap: () => WebUtil.toWebPage(detail , onResult: onResult),
       child: Container(
         width: double.infinity,
         margin: const EdgeInsets.symmetric(horizontal: 10),

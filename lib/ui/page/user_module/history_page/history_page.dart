@@ -35,6 +35,7 @@ class HistoryPage extends GetCommonView<HistoryController> {
               itemBuilder: (BuildContext context, int index) {
                 return HistoryItemWidget(
                   detail: controller.historyList[index],
+                  onResult: (value) =>  controller.historyList[index].collect = value,
                 );
               },
             )),

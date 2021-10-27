@@ -1,7 +1,6 @@
 import 'package:blog/model/project_model.dart';
 import 'package:blog/res/decoration_style.dart';
 import 'package:blog/res/style.dart';
-import 'package:blog/util/html_utils.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';

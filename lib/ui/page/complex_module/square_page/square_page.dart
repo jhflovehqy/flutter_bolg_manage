@@ -31,7 +31,10 @@ class SquarePage extends GetSaveView<SquareController> {
               return Material(
                   color: Colors.transparent,
                   child: Ripple(
-                      onTap: () => WebUtil.toWebPage( controller.projectData[index]),
+                      onTap: () => WebUtil.toWebPage(
+                              controller.projectData[index], onResult: (value) {
+                            controller.projectData[index].collect = value;
+                          }),
                       child: SquareArticleItem(
                         item: controller.projectData[index],
                       )));
