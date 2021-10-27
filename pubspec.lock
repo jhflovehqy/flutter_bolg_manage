@@ -240,6 +240,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "4.0.0"
+  image_gallery_saver:
+    dependency: "direct dev"
+    description:
+      name: image_gallery_saver
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "1.7.1"
   image_picker:
     dependency: "direct dev"
     description:
@@ -380,6 +387,20 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.11.1"
+  permission_handler:
+    dependency: "direct dev"
+    description:
+      name: permission_handler
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "8.1.6"
+  permission_handler_platform_interface:
+    dependency: transitive
+    description:
+      name: permission_handler_platform_interface
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "3.6.1"
   petitparser:
     dependency: transitive
     description:

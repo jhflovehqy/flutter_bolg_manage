@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:blog/model/request_register.dart';
 import 'package:blog/util/save/sp_key.dart';
@@ -88,6 +89,7 @@ class HttpRequest {
     } on DioError catch (e) {
       final NetError netError = HttpException.handleException(e);
       _onError(netError.code, netError.msg, fail);
+      debugPrint("异常=====>$e");
     }
   }
 }
@@ -139,3 +141,6 @@ const _methodValues = {
   Method.PATCH: "patch",
   Method.HEAD: "head",
 };
+
+
+

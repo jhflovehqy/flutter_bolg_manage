@@ -1,5 +1,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="cn.jin.blog">
+
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <!--开启读写storage权限-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
    <application
         android:label="博时"
         android:icon="@mipmap/application_icon">

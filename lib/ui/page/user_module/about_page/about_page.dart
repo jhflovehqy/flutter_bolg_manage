@@ -1,6 +1,5 @@
 import 'package:blog/app/package_info.dart';
 import 'package:blog/base/get/get_common_view.dart';
-import 'package:blog/model/web_model.dart';
 import 'package:blog/res/r.dart';
 import 'package:blog/res/strings.dart';
 import 'package:blog/res/style.dart';

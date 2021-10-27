@@ -4,7 +4,9 @@ import 'package:blog/res/colors.dart';
 import 'package:blog/res/r.dart';
 import 'package:blog/res/strings.dart';
 import 'package:blog/res/style.dart';
+import 'package:blog/util/file/file.dart';
 import 'package:blog/util/navigate_util.dart';
+import 'package:blog/util/permission.dart';
 import 'package:blog/util/toast_util.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -53,8 +55,12 @@ class ShareDialog extends StatelessWidget {
 
             ///保存在本地
             _buildShareIcon(ColorStyle.color_FE8C28, Icons.download, () {
-              ToastUtils.show(StringStyles.saveSuccess.tr);
-            })
+              PermissionRequest.sendPermission((value) {
+                if(value){
+                  FileUtils.saveAssetsGallery(assets: R.assetsShareQRCode);
+                }
+              });
+            }),
           ],
         ),
         Box.vBox5,

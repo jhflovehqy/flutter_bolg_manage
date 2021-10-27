@@ -19,5 +19,5 @@ class Constant{
   static const  wanAndroidLike = "https://wanandroid.com/blog/show/2";
 
   ///APP下载地址
-  static const downloadLike = "https://wanandroid.com/blog/show/2";
+  static const downloadUrl = "https://www.pgyer.com/blog";
 }

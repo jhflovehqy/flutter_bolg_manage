@@ -13,12 +13,12 @@ if (flutterRoot == null) {
 
 def flutterVersionCode = localProperties.getProperty('flutter.versionCode')
 if (flutterVersionCode == null) {
-    flutterVersionCode = '1'
+    flutterVersionCode = '100'
 }
 
 def flutterVersionName = localProperties.getProperty('flutter.versionName')
 if (flutterVersionName == null) {
-    flutterVersionName = '1.0'
+    flutterVersionName = '1.0.1'
 }
 
 apply plugin: 'com.android.application'
@@ -45,7 +45,7 @@ android {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId "cn.jin.blog"
         minSdkVersion 19
-        targetSdkVersion 30
+        targetSdkVersion 29
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
     }
@@ -60,10 +60,10 @@ android {
 
     signingConfigs {
         release {
-            keyAlias 'i4tools'
-            keyPassword 'www.i4.cn'
-            storeFile file('key/i4Tools.keystore')
-            storePassword 'www.i4.cn'
+            keyAlias 'keystore'
+            keyPassword 'jhf111111'
+            storeFile file('key/blog.keystore')
+            storePassword 'jhf111111'
         }
     }
 }

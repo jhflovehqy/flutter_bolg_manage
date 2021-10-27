@@ -9,6 +9,7 @@ import 'package:blog/ui/dialog/dialog_share_appliction.dart';
 import 'package:blog/ui/page/my_page/my_controller.dart';
 import 'package:blog/ui/page/my_page/widget/head_circle_widget.dart';
 import 'package:blog/ui/page/my_page/widget/title_content_widget.dart';
+import 'package:blog/util/constant.dart';
 import 'package:blog/widget/icon_text_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -173,7 +174,7 @@ class MyPage extends GetSaveView<MyController> {
                 text: StringStyles.homeShare.tr,
                 endColor: Colors.black45,
                 onTap: () {
-                  Get.dialog(ShareDialog(url : PackageInfo.downloadUrl));
+                  Get.dialog(ShareDialog(url : Constant.downloadUrl));
                 },
               ),
 

@@ -98,6 +98,7 @@ class StringStyles{
   static const String shareSaveLocal= "shareSaveLocal";
   static const String shareBrowser = "shareBrowser";
   static const String saveSuccess = "saveSuccess";
+  static const String saveFail = "saveFail";
 
   static const String tabHome= "tabHome";
   static const String tabSquare= "tabSquare";
@@ -210,6 +211,7 @@ class Messages extends Translations{
       StringStyles.shareSaveLocal : "保存到本地",
       StringStyles.shareBrowser : "浏览器打开",
       StringStyles.saveSuccess :  "保存成功",
+      StringStyles.saveFail : "保存失败",
       StringStyles.tabHome :  "首页",
       StringStyles.tabSquare :  "广场",
       StringStyles.tabAsk :  "问答",
@@ -311,6 +313,7 @@ class Messages extends Translations{
       StringStyles.shareSaveLocal : "保存到本地",
       StringStyles.shareBrowser : "瀏覽器打開",
       StringStyles.saveSuccess :  "保存成功",
+      StringStyles.saveFail : "保存失敗",
       StringStyles.tabHome :  "首頁",
       StringStyles.tabSquare :  "廣場",
       StringStyles.tabAsk :  "問答",
@@ -319,6 +322,19 @@ class Messages extends Translations{
       StringStyles.searchHistory :  "搜索歷史",
       StringStyles.searchHotWord :  "熱搜榜",
       StringStyles.refreshEmpty : '沒有更多內容啦~',
+      StringStyles.tabWechatPublic : '推薦一波優秀的技術公眾號~',
+      StringStyles.tabWechatSwitch : '換一批  ',
+      StringStyles.tabWechatDelete : '不感興趣',
+      StringStyles.historyTitle : '瀏覽歷史',
+      StringStyles.shareArticleTitle : '分享文章',
+      StringStyles.shareArticleEnter : '分享到本應用',
+      StringStyles.shareArticleHint : '給文章設置一個響亮的標題吧~',
+      StringStyles.shareArticleEdit : '請輸入文章標題~',
+      StringStyles.shareArticleSuccess :'分享成功',
+      StringStyles.shareTitle : '我的分享',
+      StringStyles.collectSuccess : '收藏成功',
+      StringStyles.collectQuit : '取消收藏成功',
+      StringStyles.notSupportLikes : "暫不支持點讚喲~"
     },
     'zh_TW' :{
       StringStyles.appName : '博時',
@@ -399,6 +415,7 @@ class Messages extends Translations{
       StringStyles.shareSaveLocal : "保存到本地",
       StringStyles.shareBrowser : "瀏覽器打開",
       StringStyles.saveSuccess :  "保存成功",
+      StringStyles.saveFail : "保存失敗",
       StringStyles.tabHome :  "首頁",
       StringStyles.tabSquare :  "廣場",
       StringStyles.tabAsk :  "問答",
@@ -407,6 +424,19 @@ class Messages extends Translations{
       StringStyles.searchHistory :  "搜索歷史",
       StringStyles.searchHotWord :  "熱搜榜",
       StringStyles.refreshEmpty : '沒有更多內容啦~',
+      StringStyles.tabWechatPublic : '推薦一波優秀的技術公眾號~',
+      StringStyles.tabWechatSwitch : '換一批  ',
+      StringStyles.tabWechatDelete : '不感興趣',
+      StringStyles.historyTitle : '瀏覽歷史',
+      StringStyles.shareArticleTitle : '分享文章',
+      StringStyles.shareArticleEnter : '分享到本應用',
+      StringStyles.shareArticleHint : '給文章設置一個響亮的標題吧~',
+      StringStyles.shareArticleEdit : '請輸入文章標題~',
+      StringStyles.shareArticleSuccess :'分享成功',
+      StringStyles.shareTitle : '我的分享',
+      StringStyles.collectSuccess : '收藏成功',
+      StringStyles.collectQuit : '取消收藏成功',
+      StringStyles.notSupportLikes : "暫不支持點讚喲~"
     },
     'en_US' : {
       StringStyles.appName : 'BlogTime',
@@ -479,7 +509,7 @@ class Messages extends Translations{
       StringStyles.refreshHeaderFreed : "Release refresh",
       StringStyles.refreshHeaderFailed : "Refresh failed!",
       StringStyles.refreshHeaderSuccess : "Refresh successfully",
-      StringStyles.collectTitle : "My Collection",
+      StringStyles.collectTitle : "My collection",
       StringStyles.enter : "Confirm",
       StringStyles.quit : "Quit",
       StringStyles.shareApplication : "Practical blog app recommended to you",
@@ -487,14 +517,28 @@ class Messages extends Translations{
       StringStyles.shareSaveLocal : "Save to local",
       StringStyles.shareBrowser : "Browser opens",
       StringStyles.saveSuccess :  "Saved successfully",
+      StringStyles.saveFail : "Saved fail",
       StringStyles.tabHome :  "FrontPage",
       StringStyles.tabSquare :  "Square",
       StringStyles.tabAsk :  "Q&A",
       StringStyles.searchHint :  "Search what you want",
       StringStyles.search :  "Search",
-      StringStyles.searchHistory :  "Search History",
+      StringStyles.searchHistory :  "Search history",
       StringStyles.searchHotWord :  "Hot search list",
       StringStyles.refreshEmpty : 'No more content~',
+      StringStyles.tabWechatPublic : 'Recommend a wave of excellent technical public accounts~',
+      StringStyles.tabWechatSwitch : 'Change batch  ',
+      StringStyles.tabWechatDelete : 'not interested',
+      StringStyles.historyTitle : 'Browsing History',
+      StringStyles.shareArticleTitle : 'Share articles',
+      StringStyles.shareArticleEnter : 'Share to this app',
+      StringStyles.shareArticleHint : 'Give the article a loud title~',
+      StringStyles.shareArticleEdit : 'Please enter the title of the article~',
+      StringStyles.shareArticleSuccess :'Successful sharing',
+      StringStyles.shareTitle : 'My share',
+      StringStyles.collectSuccess : 'Collection success',
+      StringStyles.collectQuit : 'Unfavorite successfully',
+      StringStyles.notSupportLikes : "Don't support likes at the moment~"
     }
   };
 
