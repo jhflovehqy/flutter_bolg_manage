@@ -1,5 +1,3 @@
-# blog
-
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/904c9f0501a6437f8f66284a020319b7.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5a626am55YWt5pyI5aSp,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center)
 
 ## | 前言
@@ -15,12 +13,14 @@
  - 成熟的体系及框架
  - 编译速度快且带有**热加载**(虽然Android原生使用了模块化，但是在合并后编译及打包的时间是真的长)
 
-与其他跨平台方案的对比：
+**与其他跨平台方案的对比：**
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/a621d1519e4444898df8a3750826c5a2.png)
 
 ## 我的项目
 **项目预览（Gif）：**
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/19d66d9b9bcc42198eb267e960605da5.gif#pic_center)
+<hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
+
 **项目预览（PNG）：**
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/2f56f2f805b647dc93294b7eaa8ba350.jpg?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5a626am55YWt5pyI5aSp,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center)
 **资源下载：**
@@ -43,6 +43,34 @@
  - 良好的注释风格，符合注释规范
  - 目录层级清晰，模块划分可快速查找
  - 基于**Flutter2.0**，支持空安全，无需后续升级
+
+<hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
+
+**为什么使用Getx**
+
+ - **Fish Redux?**
+
+   在未使用Flutter之前，我只听说过Flutter在闲鱼团队中广泛使用，通过开启显示布局边界也能看出闲鱼APP的大部分页面都使用了Flutter。在决定使用Flutter进行项目开发时，首选就是想使用闲鱼Fish Redux状态管理框架进行开发，了解了Fish Redux使用方法、优缺点后，通过插件生成模板代码后是这样的：
+   ![在这里插入图片描述](https://img-blog.csdnimg.cn/fd3d77c7ad1b4bce9027369307fef376.png)
+   我觉得对于中小型项目来说，使用Fish Redux反而是一种累赘，太多的结构分离只会使项目更加不好管理！且Fish Redux在Flutter2发布之后迟迟未支持空安全，稳定性不言而喻！
+   
+ - **Provider?**
+Provider 通过观察者模式来触发Widget更新，确实能有效的进行状态管理，但Provider太过于依赖context上下文，非父子组件的状态管理问题，需要通过发送事件总线通知或全局的方式来处理。
+
+ - **MobX ?**
+MobX也是基于观察者模式，使用简单快速上手，不会存在 Redux 顶级状态管理难以分而治之的问题，但是MobX使用了大量注解且在编译时生成代码，会耗费大量的时间。
+
+ - **Getx?**
+ Getx在众多的Flutter状态管理框架中并不是那么出名，但是在熟悉它的使用后立马就认定了它，在逐渐认识的过程中，总结了它的优点：
+（1）**轻量级**。Getx分为Binding层、Controller层，且每一层负责的事务都清晰可见。
+（2）**依赖注入**。Binding负责把需要的对象进行依赖注入，也可以使用Get.lazyPut在使用时才进入注入，代码层级可以完全分离。
+（3）**路由导航**。Getx重定义了Naviation的接口，使用更加简单的方式进行导航传值及路由返回，且无须使用context上下文。
+（4）**使用方便、无侵入**。在封装了基类之后，基本上只需要继承基类就行，无须在顶层套娃。且入手简单，基本上了解之后使用起来比较容易上手。
+（5）**性能**。Getx的Binding层（注入层）绑定了路由栈，当前栈在销毁时，注入层会自动释放对象，不需要手动释放，不会造成堆积大量对象在内存中。
+（6）**丰富的API**。例如打开Dialog，无论你是否在Widget层中，都可以无需context使用Get.dialog来打开弹窗。
+
+
+<hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
 
 **使用的第三方框架**
 
@@ -83,11 +111,11 @@
   permission_handler: ^8.1.6
 
 ```
-
+<hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
 
   **项目结构**
  ![在这里插入图片描述](https://img-blog.csdnimg.cn/f951ac1ad2d840f2ba2c37dbf0feb0a5.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5a626am55YWt5pyI5aSp,size_11,color_FFFFFF,t_70,g_se,x_16)
-
+<hr style=" border:solid; width:100px; height:1px;" color=#000000 size=1">
 
 **技术支持**
 
@@ -96,3 +124,7 @@
  - 感谢掘金的[艾维码大神](https://juejin.cn/user/729731450022440/posts)的Flutter系列文章，让我在各种状态管理框架中一眼看中了Getx
 
 
+
+**总结**
+
+虽然博时APP不是特别完美，如部分细节未处理到位、不支持一键更换主题，但是它绝对是一个可快速入手的开源项目，在封装Widget和网络请求、状态冲突时，也花了不少心血去设计，在代码注释方面，也添加了不少注释，挖了不少的坑。在使用Flutter开发项目时，也可以借鉴此项目来进行开发，能节省不少时间！后续会对博时APP进行更新维护！
