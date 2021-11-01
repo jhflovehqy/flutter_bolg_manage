@@ -27,7 +27,7 @@
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/2f56f2f805b647dc93294b7eaa8ba350.jpg?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5a626am55YWt5pyI5aSp,size_20,color_FFFFFF,t_70,g_se,x_16#pic_center)
 **资源下载：**
 
- - Github：[https://github.com/jhflovehqy/flutter_bolg_manage](https://github.com/jhflovehqy/flutter_bolg_manage)
+ - 我的博客：[https://blog.csdn.net/lalallallalla/article/details/121006909](https://blog.csdn.net/lalallallalla/article/details/121006909)
  - 博时App下载：[https://www.pgyer.com/blog](https://www.pgyer.com/blog)
  - API地址：[https://www.wanandroid.com/blog/show/2](https://www.wanandroid.com/blog/show/2)
  - 博时App二维码下载：
