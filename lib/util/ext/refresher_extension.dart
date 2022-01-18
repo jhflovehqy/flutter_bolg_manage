@@ -34,6 +34,8 @@ class RefreshExtension{
     ///最后一页了，无更多数据
     if(over){
       controller.loadNoData();
+    }else{
+      controller.loadComplete();
     }
     if(refresh == Refresh.pull){
       ToastUtils.show(StringStyles.pointsNotifySuccess.tr);

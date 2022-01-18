@@ -10,7 +10,7 @@ import '../getx_controller_inject.dart';
 /// @name : jhf
 /// @description :分页专用，如果页面中有分页加载，请使用此BaseGetPageController
 /// 如果没有分页，请使用BaseGetController
-/// 此页面暂时不对数据进行处理，不防止List在此处，因为当前已经很简洁了，不需要绑定[RefreshWidget]进行节省代码
+/// 此页面暂时不对数据进行处理，不放置List在此处，因为当前已经很简洁了，不需要绑定[RefreshWidget]进行节省代码
 class BaseGetPageController extends BaseGetController{
 
 
@@ -22,6 +22,7 @@ class BaseGetPageController extends BaseGetController{
   var isInit = true;
 
 
+  var controller;
 
 
   ///加载成功，是否显示空页面
@@ -42,6 +43,7 @@ class BaseGetPageController extends BaseGetController{
   ///预留初次加载，注意只供上拉下拉使用
   initPullLoading(RefreshController controller){
     if(isInit){
+      this.controller = controller;
       requestData(controller);
     }
   }

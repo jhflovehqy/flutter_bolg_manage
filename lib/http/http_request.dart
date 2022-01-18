@@ -13,10 +13,10 @@ import 'package:flutter/cupertino.dart';
 /// 连接超时时间
 const int _connectTimeout = 10000;
 
-/// 接受超时时间
+/// 接收超时时间
 const int _receiveTimeout = 10000;
 
-/// 接受超时时间
+/// 发送超时时间
 const int _sendTimeout = 10000;
 
 typedef Success<T> = Function(T data);

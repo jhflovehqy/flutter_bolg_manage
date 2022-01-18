@@ -36,7 +36,6 @@ class SearchController extends BaseGetPageController {
   @override
   void onInit() {
     super.onInit();
-    isInit = false;
     notifySearchHistory();
     getSearchHotWord();
   }
@@ -97,6 +96,7 @@ class SearchController extends BaseGetPageController {
     if (changeText.value.isEmpty) {
       return;
     }
+    page = 1;
     ///显示加载数据
     showResult.value = true;
     showLoading();
@@ -107,13 +107,11 @@ class SearchController extends BaseGetPageController {
     if(Get.context != null){
       KeyboardUtils.hideKeyboard(Get.context!);
     }
-    ///请求数据
-    request.searchKeyWord(page, changeText.value, success: (data, over) {
-      searchResult.value = data;
-      showSuccess(searchResult);
-    }, fail: (code, msg) {
-      showError();
-    });
+
+    if(controller != null){
+      requestData(controller , refresh : Refresh.first);
+      isInit = false;
+    }
   }
 
   ///清空搜索历史
