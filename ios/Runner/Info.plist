@@ -43,5 +43,7 @@
 	<false/>
 	<key>io.flutter.embedded_views_preview</key>
     <string>YES</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>需要您的同意,APP才能访问相册</string>
 </dict>
 </plist>
