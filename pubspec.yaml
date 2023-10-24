@@ -44,42 +44,42 @@ dev_dependencies:
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^1.0.0
+  flutter_lints: 3.0.0
   # rxdart https://pub.flutter-io.cn/packages/rxdart
-  rxdart: ^0.27.1
+  rxdart: ^0.27.7
   #GetX状态管理框架 https://pub.flutter-io.cn/packages/get
-  get: 4.3.7
+  get: ^4.6.5
   #toast https://pub.flutter-io.cn/packages/fluttertoast
-  fluttertoast: ^8.0.8
+  fluttertoast: ^8.2.2
   # 网络请求库 https://github.com/flutterchina/dio
   dio: 4.0.0
   # 网络检测 https://pub.flutter-io.cn/packages/connectivity
   connectivity: 3.0.6
-  # 加载SVG图片 https://pub.flutter-io.cn/packages/flutter_svg
-  flutter_svg: 0.22.0
   # lottie动画 https://pub.flutter-io.cn/packages/flutter_lottie
-  lottie: ^1.1.0
+  lottie: ^2.6.0
   # SP键值对存储 https://pub.flutter-io.cn/packages/shared_preferences
-  shared_preferences: ^2.0.6
-  # WebView
-  webview_flutter: ^2.0.12
+  shared_preferences: ^2.2.2
   #读取相册
-  image_picker: 0.8.3+3
+  image_picker: 1.0.2
   # https://github.com/flutter/plugins/tree/master/packages/url_launcher
-  url_launcher: ^6.0.9
+  url_launcher: ^6.1.14
   #文件路径管理工具类
-  path_provider: ^2.0.2
+  path_provider: ^2.1.0
   #上拉刷新、下拉加载
-  pull_to_refresh: ^2.0.0
-  #加载html标签
-  flutter_html: ^2.1.2
+  pull_to_refresh_flutter3: ^2.0.1 #下拉刷新
   #调用分享平台 https://pub.flutter-io.cn/packages/share
   share: ^2.0.4
   #圖片保存到本地 https://pub.flutter-io.cn/packages/image_gallery_saver
-  image_gallery_saver: ^1.7.1
+  image_gallery_saver: ^2.0.3
   #权限申请框架 https://pub.flutter-io.cn/packages/permission_handler
-  permission_handler: ^8.1.6
+  permission_handler: ^11.0.1
+  
 
+  #加载html标签
+  # 加载SVG图片 https://pub.flutter-io.cn/packages/flutter_svg
+  flutter_svg: 2.0.6
+  flutter_inappwebview: ^5.3.2 #webview 插件
+  flutter_widget_from_html: ^0.14.4
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 

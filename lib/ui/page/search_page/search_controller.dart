@@ -7,14 +7,14 @@ import 'package:blog/util/save/sp_util.dart';
 import 'package:blog/widget/pull_smart_refresher.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get_rx/src/rx_types/rx_types.dart';
-import 'package:pull_to_refresh/pull_to_refresh.dart';
+import 'package:pull_to_refresh_flutter3/pull_to_refresh_flutter3.dart';
 import 'package:get/get.dart';
 
 /// @class : SearchController
 /// @date : 2021/9/3
 /// @name : jhf
 /// @description :搜索页面 控制器层
-class SearchController extends BaseGetPageController {
+class MySearchController extends BaseGetPageController {
   ///当前热词Widget，由于热词从服务器加载，需要动态添加
   RxList<HotWord> hotWord = <HotWord>[].obs;
 
@@ -84,6 +84,7 @@ class SearchController extends BaseGetPageController {
   void hotOrHistorySearch(String items) {
     ///改变存储中的值
     changeText.value = items;
+
     ///改变输入框内容，并更新当前光标在尾部
     textController.text = items;
     textController.selection =
@@ -97,19 +98,22 @@ class SearchController extends BaseGetPageController {
       return;
     }
     page = 1;
+
     ///显示加载数据
     showResult.value = true;
     showLoading();
+
     ///更新搜索历史
     SpUtil.saveSearchHistory(changeText.value);
     notifySearchHistory();
+
     ///隐藏软键盘
-    if(Get.context != null){
+    if (Get.context != null) {
       KeyboardUtils.hideKeyboard(Get.context!);
     }
 
-    if(controller != null){
-      requestData(controller , refresh : Refresh.first);
+    if (controller != null) {
+      requestData(controller, refresh: Refresh.first);
       isInit = false;
     }
   }

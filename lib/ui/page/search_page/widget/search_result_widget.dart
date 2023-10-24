@@ -16,7 +16,7 @@ import '../search_controller.dart';
 /// @date : 2021/9/7
 /// @name : jhf
 /// @description :搜索页面 搜索结果
-class SearchResultWidget extends GetCommonView<SearchController> {
+class SearchResultWidget extends GetCommonView<MySearchController> {
   const SearchResultWidget({Key? key}) : super(key: key);
 
   @override
@@ -26,7 +26,7 @@ class SearchResultWidget extends GetCommonView<SearchController> {
           child: Container(
               margin: const EdgeInsets.symmetric(horizontal: 16),
               color: Colors.white,
-              child: RefreshWidget<SearchController>(
+              child: RefreshWidget<MySearchController>(
                   child: ListView.builder(
                 padding: EdgeInsets.zero,
                 shrinkWrap: true,
@@ -35,12 +35,11 @@ class SearchResultWidget extends GetCommonView<SearchController> {
                   return Material(
                       color: Colors.transparent,
                       child: Ripple(
-                          onTap: () =>WebUtil.toWebPage(
-                              controller.searchResult[index],
-                            onResult: (value){
-                              controller.searchResult[index].collect = value;
-                            }
-                          ),
+                          onTap: () =>
+                              WebUtil.toWebPage(controller.searchResult[index],
+                                  onResult: (value) {
+                                controller.searchResult[index].collect = value;
+                              }),
                           child: SearchResultItem(
                             item: controller.searchResult[index],
                           )));

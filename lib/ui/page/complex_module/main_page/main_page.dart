@@ -49,8 +49,9 @@ class MainPage extends GetSaveView<MainController> {
                                 onTap: (index) {
                                   if (index == 0) {
                                     Get.toNamed(Routes.rankingPage);
-                                  }else {
-                                    WebUtil.toWebPageBanners(controller.banner[index]);
+                                  } else {
+                                    WebUtil.toWebPageBanners(
+                                        controller.banner[index]);
                                   }
                                 },
                               ),
@@ -58,13 +59,14 @@ class MainPage extends GetSaveView<MainController> {
                           } else if (index == controller.insertIndex) {
                             ///随机出现的公众号列表
                             return Obx(() => WechatPublicWidget(
-                              isFirst: controller.isFirst,
-                              wechatPublic: controller.showWechatPublic,
-                              onChange: () => controller.notifyRandomPublic(),
-                              showSwitch: controller.showSwitch.value,
-                              showDelete: controller.showDelete.value,
-                              onTap: () => controller.notifyButtonState(),
-                            ));
+                                  isFirst: controller.isFirst,
+                                  wechatPublic: controller.showWechatPublic,
+                                  onChange: () =>
+                                      controller.notifyRandomPublic(),
+                                  showSwitch: controller.showSwitch.value,
+                                  showDelete: controller.showDelete.value,
+                                  onTap: () => controller.notifyButtonState(),
+                                ));
                           } else {
                             ///计算当前显示的真实索引
                             var newIndex = index -
@@ -77,9 +79,12 @@ class MainPage extends GetSaveView<MainController> {
                             return Material(
                               color: Colors.transparent,
                               child: Ripple(
-                                  onTap: () => WebUtil.toWebPage(controller.projectData[newIndex] , onResult: (value){
-                                    controller.projectData[newIndex].collect = value;
-                                  }),
+                                  onTap: () => WebUtil.toWebPage(
+                                          controller.projectData[newIndex],
+                                          onResult: (value) {
+                                        controller.projectData[newIndex]
+                                            .collect = value;
+                                      }),
                                   child: MainArticleItem(
                                     item: controller.projectData[newIndex],
                                     index: newIndex,

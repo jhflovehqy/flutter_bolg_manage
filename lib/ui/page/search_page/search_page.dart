@@ -11,7 +11,7 @@ import 'package:flutter/material.dart';
 /// @date : 2021/9/3
 /// @name : jhf
 /// @description :搜索页面 View层
-class SearchPage extends GetCommonView<SearchController> {
+class SearchPage extends GetCommonView<MySearchController> {
   ///TextFieId控制器
 
   const SearchPage({Key? key}) : super(key: key);

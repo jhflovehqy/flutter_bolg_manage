@@ -21,7 +21,7 @@ ThemeData get appThemeData => ThemeData(
     primaryColor: kPrimaryColor,
     primaryColorLight: kPrimaryLightColor,
     scaffoldBackgroundColor: Colors.white,
-    accentColor: kPrimaryColor,
+    hintColor: kPrimaryColor,
     appBarTheme: appBarTheme,
     textTheme: const TextTheme());
 

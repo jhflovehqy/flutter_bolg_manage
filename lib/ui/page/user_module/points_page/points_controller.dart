@@ -2,7 +2,7 @@ import 'package:blog/base/get/controller/base_page_controller.dart';
 import 'package:blog/model/points_detail.dart';
 import 'package:blog/util/ext/refresher_extension.dart';
 import 'package:blog/widget/pull_smart_refresher.dart';
-import 'package:pull_to_refresh/pull_to_refresh.dart';
+import 'package:pull_to_refresh_flutter3/pull_to_refresh_flutter3.dart';
 
 /// @class : PointsController
 /// @date : 2021/08/25
@@ -18,6 +18,7 @@ class PointsController extends BaseGetPageController {
       {Refresh refresh = Refresh.first}) {
     request.pointsDetail(page, success: (data, over) {
       RefreshExtension.onSuccess(controller, refresh, over);
+
       ///下拉刷新需要清除列表
       if (refresh != Refresh.down) {
         pointsList.clear();

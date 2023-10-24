@@ -5,7 +5,7 @@ import 'package:blog/ui/page/webview_page/webview_controller.dart';
 import 'package:blog/ui/page/webview_page/widget/webview_bottom_widget.dart';
 import 'package:blog/widget/_toolbar.dart';
 import 'package:flutter/material.dart';
-import 'package:webview_flutter/webview_flutter.dart';
+import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 import 'package:flutter_svg/svg.dart';
@@ -16,9 +16,7 @@ import 'package:share/share.dart';
 /// @name : jhf
 /// @description :WebView View层
 class WebViewPage extends GetCommonView<WebController> {
-
   const WebViewPage({Key? key}) : super(key: key);
-
 
   @override
   Widget build(BuildContext context) {
@@ -53,9 +51,10 @@ class WebViewPage extends GetCommonView<WebController> {
                         ),
                         splashColor: ColorStyle.color_E2E3E8_66,
                         onTap: () {
-                          Share.share(controller.detail.title + controller.detail.link);
+                          Share.share(
+                              controller.detail.title + controller.detail.link);
                         },
-                        child:  SvgPicture.asset(
+                        child: SvgPicture.asset(
                           R.assetsImagesShare,
                           width: 16,
                           height: 16,
@@ -68,11 +67,12 @@ class WebViewPage extends GetCommonView<WebController> {
               Expanded(
                 child: Stack(
                   children: [
-                    WebView(
-                      initialUrl: controller.detail.link,
-                      javascriptMode: JavascriptMode.unrestricted,
-                      onProgress: (pro) {
-                        controller.progress.value = (pro / 100).toDouble();
+                    InAppWebView(
+                      initialUrlRequest: URLRequest(
+                        url: Uri.parse(controller.detail.link),
+                      ),
+                      onProgressChanged: (webController, progress) {
+                        controller.progress.value = progress / 100;
                       },
                     ),
                     Obx(() => Visibility(
@@ -82,8 +82,9 @@ class WebViewPage extends GetCommonView<WebController> {
                               right: 0,
                               top: 0,
                               bottom: 0,
-                              child: Lottie.asset(R.assetsLottieCollect,
-                                  animate: controller.collectAtState.value,
+                              child: Lottie.asset(
+                                R.assetsLottieCollect,
+                                animate: controller.collectAtState.value,
                               )),
                         )),
                     Obx(() => Visibility(

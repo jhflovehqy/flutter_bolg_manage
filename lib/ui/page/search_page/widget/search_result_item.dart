@@ -3,7 +3,9 @@ import 'package:blog/res/decoration_style.dart';
 import 'package:blog/res/style.dart';
 import 'package:blog/util/html_utils.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_html/flutter_html.dart';
+import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
+
+//import 'package:flutter_html/flutter_html.dart';
 
 /// @class : SearchPage
 /// @date : 2021/9/7
@@ -23,18 +25,13 @@ class SearchResultItem extends StatelessWidget {
       decoration: DecorationStyle.colorShadowBorderStand(),
       child: Column(
         children: [
-          Html(
-            data: content,
-            style: {
-              'font': Style(
-                  fontSize: const FontSize(15), fontWeight: FontWeight.w700)
-            },
-          ),
+          HtmlWidget(content,
+              textStyle: TextStyle(fontSize: 15, fontWeight: FontWeight.w700)),
           Visibility(
             visible: item.desc.isNotEmpty,
             child: Container(
-               margin: const EdgeInsets.only(bottom: 6),
-               child: Html(data: item.desc)),
+                margin: const EdgeInsets.only(bottom: 6),
+                child: HtmlWidget(item.desc)), // Html(data: item.desc)),
           ),
           Box.vBox3,
           Row(

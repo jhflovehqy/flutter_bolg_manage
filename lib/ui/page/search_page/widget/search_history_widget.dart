@@ -4,7 +4,6 @@ import 'package:blog/res/strings.dart';
 import 'package:blog/res/style.dart';
 import 'package:blog/ui/page/search_page/search_controller.dart';
 import 'package:blog/ui/page/search_page/widget/search_item.dart';
-import 'package:blog/util/keyboard_util.dart';
 import 'package:blog/widget/ripple_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -16,7 +15,7 @@ import 'package:flutter/src/widgets/framework.dart';
 /// @date : 2021/9/7
 /// @name : jhf
 /// @description :搜索页面 搜索历史
-class SearchHistoryWidget extends GetCommonView<SearchController> {
+class SearchHistoryWidget extends GetCommonView<MySearchController> {
   const SearchHistoryWidget({
     Key? key,
   }) : super(key: key);
@@ -60,6 +59,7 @@ class SearchHistoryWidget extends GetCommonView<SearchController> {
                   for (String items in controller.history)
                     SearchHistoryItem(
                         name: items,
+
                         ///改变输入框内容、设置输入框文本、光标移动到尾部、开始搜索数据
                         onTap: () => controller.hotOrHistorySearch(items))
                 ],

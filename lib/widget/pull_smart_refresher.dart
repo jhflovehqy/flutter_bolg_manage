@@ -1,13 +1,12 @@
 import 'package:blog/base/get/controller/base_page_controller.dart';
-import 'package:blog/res/colors.dart';
 import 'package:blog/res/r.dart';
 import 'package:blog/res/strings.dart';
 import 'package:blog/res/style.dart';
 import 'package:blog/widget/over_scroll_behavior.dart';
 import 'package:flutter/material.dart';
-import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:lottie/lottie.dart';
 import 'package:get/get.dart';
+import 'package:pull_to_refresh_flutter3/pull_to_refresh_flutter3.dart';
 
 ///刷新状态
 enum Refresh {

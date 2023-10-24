@@ -3,7 +3,6 @@ import 'package:blog/res/decoration_style.dart';
 import 'package:blog/res/style.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_html/flutter_html.dart';
 
 /// @class : SearchPage
 /// @date : 2021/9/7
@@ -38,10 +37,11 @@ class MainArticleItem extends StatelessWidget {
                   visible: index <= 2,
                   child: Container(
                     margin: const EdgeInsets.only(top: 4),
-                    padding: const EdgeInsets.symmetric(horizontal: 3 , vertical: 2),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 3, vertical: 2),
                     decoration: DecorationStyle.customize(Colors.red, 3),
                     child: const Text(
-                        '荐',
+                      '荐',
                       style: Styles.style_white_10,
                     ),
                   ))
@@ -49,7 +49,7 @@ class MainArticleItem extends StatelessWidget {
           ),
           Visibility(
             visible: item.desc.isNotEmpty,
-            child: Html(data: item.desc),
+            child: Text(item.desc), //(data: item.desc),
           ),
           Box.vBox10,
           Row(
@@ -82,8 +82,7 @@ class MainArticleItem extends StatelessWidget {
 
   /// 获取第一行内部边距的Text
   ///[title] 标题
-  String getPaddingText(String title ){
-    return index <= 2 ? "     $title" : title ;
+  String getPaddingText(String title) {
+    return index <= 2 ? "     $title" : title;
   }
-
 }

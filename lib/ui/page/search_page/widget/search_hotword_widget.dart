@@ -16,9 +16,7 @@ import 'package:get/get.dart';
 /// @date : 2021/9/6
 /// @name : jhf
 /// @description :搜索页面 搜索热词
-class SearchHotWordWidget extends GetCommonView<SearchController> {
-
-
+class SearchHotWordWidget extends GetCommonView<MySearchController> {
   const SearchHotWordWidget({
     Key? key,
   }) : super(key: key);
@@ -57,7 +55,8 @@ class SearchHotWordWidget extends GetCommonView<SearchController> {
                       crossAxisCount: 2, childAspectRatio: 5 / 1),
                   itemBuilder: (BuildContext context, int index) {
                     return GestureDetector(
-                      onTap: ()=> controller.hotOrHistorySearch(controller.hotWord[index].name),
+                      onTap: () => controller
+                          .hotOrHistorySearch(controller.hotWord[index].name),
                       child: SearchHotWordItem(
                         item: controller.hotWord[index],
                         index: index + 1,

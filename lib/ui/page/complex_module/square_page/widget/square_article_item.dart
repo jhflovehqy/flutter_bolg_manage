@@ -4,7 +4,6 @@ import 'package:blog/res/style.dart';
 import 'package:blog/util/html_utils.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_html/flutter_html.dart';
 
 /// @class : SquareArticleItem
 /// @date : 2021/9/9
@@ -14,8 +13,7 @@ class SquareArticleItem extends StatelessWidget {
   ///列表数据
   ProjectDetail item;
 
-  SquareArticleItem({Key? key, required this.item})
-      : super(key: key);
+  SquareArticleItem({Key? key, required this.item}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +29,6 @@ class SquareArticleItem extends StatelessWidget {
             overflow: TextOverflow.ellipsis,
             style: Styles.style_black_16_bold,
           ),
-
           Box.vBox10,
           Row(
             crossAxisAlignment: CrossAxisAlignment.end,
@@ -39,8 +36,9 @@ class SquareArticleItem extends StatelessWidget {
               Visibility(
                   visible: item.fresh,
                   child: Container(
-                    margin: const EdgeInsets.only(top: 4 , right: 12),
-                    padding: const EdgeInsets.symmetric(horizontal: 3 , vertical: 2),
+                    margin: const EdgeInsets.only(top: 4, right: 12),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 3, vertical: 2),
                     decoration: DecorationStyle.customize(Colors.red, 3),
                     child: const Text(
                       '新',

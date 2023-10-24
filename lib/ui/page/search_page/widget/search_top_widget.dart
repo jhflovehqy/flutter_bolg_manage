@@ -18,7 +18,7 @@ import '../search_controller.dart';
 /// @date : 2021/9/6
 /// @name : jhf
 /// @description :搜索页面 顶部banner
-class SearchTopWidget extends GetCommonView<SearchController> {
+class SearchTopWidget extends GetCommonView<MySearchController> {
   ///搜索点击事件
   final GestureTapCallback? onTap;
 

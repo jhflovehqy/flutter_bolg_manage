@@ -25,7 +25,6 @@ class HomePage extends StatefulWidget {
 
 class HomeTabOptionsState extends State<HomePage>
     with SingleTickerProviderStateMixin, WidgetsBindingObserver {
-
   ///控制器
   TabController? tabController;
 
@@ -35,14 +34,14 @@ class HomeTabOptionsState extends State<HomePage>
     super.didChangeAppLifecycleState(state);
     if (state == AppLifecycleState.resumed) {
       var clipboardData = Clipboard.getData(Clipboard.kTextPlain);
-      clipboardData.then((value){
+      clipboardData.then((value) {
         debugPrint("clipboardData=> ${value?.text}");
-        if(value != null
-            && value.text != null
-            && value.text!.isNotEmpty
-            && (value.text!.startsWith("https://")
-            || value.text!.startsWith("http://"))) {
-          Get.dialog(ShareArticleDialog(url :  value.text!));
+        if (value != null &&
+            value.text != null &&
+            value.text!.isNotEmpty &&
+            (value.text!.startsWith("https://") ||
+                value.text!.startsWith("http://"))) {
+          Get.dialog(ShareArticleDialog(url: value.text!));
         }
       });
     }
@@ -51,6 +50,7 @@ class HomeTabOptionsState extends State<HomePage>
   @override
   void initState() {
     tabController = TabController(length: 3, vsync: this);
+    //监听应用状态会回调 didChangeAppLifecycleState  方法
     WidgetsBinding.instance?.addObserver(this);
 
     ///监听TabBar切换事件
@@ -73,6 +73,7 @@ class HomeTabOptionsState extends State<HomePage>
   void dispose() {
     super.dispose();
     tabController?.dispose();
+    //移除 监听应用状态会回调 didChangeAppLifecycleState  方法
     WidgetsBinding.instance?.removeObserver(this);
   }
 

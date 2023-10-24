@@ -2,18 +2,14 @@ import 'package:blog/base/get/controller/base_page_controller.dart';
 import 'package:blog/model/project_model.dart';
 import 'package:blog/util/ext/refresher_extension.dart';
 import 'package:blog/widget/pull_smart_refresher.dart';
-import 'package:pull_to_refresh/pull_to_refresh.dart';
-
+import 'package:pull_to_refresh_flutter3/pull_to_refresh_flutter3.dart';
 
 /// @class : ProjectController
 /// @date : 2021/08/23
 /// @name : jhf
 /// @description :项目 控制器层
 class ProjectController extends BaseGetPageController {
-
   List<ProjectDetail> projectData = [];
-
-
 
   ///请求积分明细
   @override
@@ -34,9 +30,4 @@ class ProjectController extends BaseGetPageController {
       RefreshExtension.onError(controller, refresh);
     });
   }
-
-
-
-
-
 }

@@ -4,7 +4,8 @@ import 'package:blog/util/web_util.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:blog/model/collect_model.dart';
-import 'package:flutter_html/flutter_html.dart';
+//import 'package:flutter_html/flutter_html.dart';
+import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
 
 /// @class : PointsItemWidget
 /// @date : 2021/08/25
@@ -70,13 +71,16 @@ class CollectItemWidget extends StatelessWidget {
                   ),
                   Box.vBox10,
                   Visibility(
-                    visible: collect.desc.isNotEmpty,
-                      child: Html(
-                    data: collect.desc,
-                    // overflow: TextOverflow.ellipsis,
-                    // maxLines: 2,
-                    // style: Styles.style_6A6969_14,
-                  )),
+                      visible: collect.desc.isNotEmpty,
+                      child: HtmlWidget(
+                        collect.desc,
+                        textStyle: Styles.style_6A6969_14,
+                      )), //Html(
+                  //data: collect.desc,
+                  // overflow: TextOverflow.ellipsis,
+                  // maxLines: 2,
+                  // style: Styles.style_6A6969_14,
+                  //)),
                   Box.vBox10,
                   Row(
                     children: [

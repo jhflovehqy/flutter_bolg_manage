@@ -1,4 +1,3 @@
-import 'dart:async';
 import 'dart:math';
 
 import 'package:blog/base/get/controller/base_page_controller.dart';
@@ -9,7 +8,7 @@ import 'package:blog/res/r.dart';
 import 'package:blog/util/ext/refresher_extension.dart';
 import 'package:blog/widget/pull_smart_refresher.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:pull_to_refresh/pull_to_refresh.dart';
+import 'package:pull_to_refresh_flutter3/pull_to_refresh_flutter3.dart';
 import 'package:get/get.dart';
 
 /// @class : MainController
@@ -46,6 +45,7 @@ class MainController extends BaseGetPageController {
 
   ///是否显示换一批按钮
   RxBool showSwitch = false.obs;
+
   ///是否显示删除按钮
   RxBool showDelete = false.obs;
 
@@ -129,21 +129,21 @@ class MainController extends BaseGetPageController {
   }
 
   ///换一批新的公众号
-  void notifyRandomPublic(){
-    if(showSwitch.value){
+  void notifyRandomPublic() {
+    if (showSwitch.value) {
       showWechatPublic = getRandomPublicData(wechatPublic);
       update();
-    }else{
+    } else {
       showSwitch.value = true;
     }
   }
 
   ///点击背景隐藏按钮
-  void notifyButtonState(){
-    if(showSwitch.value){
+  void notifyButtonState() {
+    if (showSwitch.value) {
       showSwitch.value = false;
     }
-    if(showDelete.value){
+    if (showDelete.value) {
       showDelete.value = false;
     }
   }
